@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>My New Hugo Site</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://xin.github.io/favicon.ico">
+    <link rel="canonical" href="https://xin.github.io">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://xin.github.io">My New Hugo Site</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>编译执行和解释执行的优缺点 - Sun, Apr 23, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <p>针对优缺点，可以从以下几个方面分析。</p>
+<p>​    从启动效率来看，解释执行不需要进行编译操作，而编译执行，要经过编译过程。解释执行启动速度更快。</p>
+<p>​    从运行效率来看，因为编译执行只需要编译一次，以后再运行就无需编译，而解释执行每次都要经过解释过程，所以编译执行效率更高。</p>
+<p>​    从内存使用方面来看，编译执行需要生成编译后的机器码文件，而解释执行时逐句解释执行，所以解释执行对内存占用更少。</p>
+<p>​    从跨平台的角度来看，因为解释执行每次可以根据不同的平台进行解释，例如js在linux和windows都可以运行，而C语言在windows下编译后的文件，只能在windows下才行执行。</p>
+<p>​     对于大型项目来说，比较注重运行效率，核心代码一般都是采用编译执行的语言。而对于一些简单的操作，可以考虑使用解释执行的语言。</p>
+
+    <h4><a href="https://xin.github.io">Back to Home</a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+    <p>
+&copy; 
+
+    
+
+<span id="thisyear">2023</span>
+
+
+</p>
+    <p class="text-center">
+        
+        
+        
+        
+        
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: null ,
+        onePass: null , 
+        speedFactor: null 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

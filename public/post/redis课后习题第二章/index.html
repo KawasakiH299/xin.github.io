@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>My New Hugo Site</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://xin.github.io/favicon.ico">
+    <link rel="canonical" href="https://xin.github.io">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://xin.github.io">My New Hugo Site</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>redis课后习题（第二章） - Tue, Feb 14, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <h3 id="字符串键是redis最基本的键值对类型这种类型的健值对会在数据库中把单独的__________和单独的__________关联起来被关联的键和值可以是普通的__________也可以是______________________________压缩文件等二进制数据">字符串键是Redis最基本的键值对类型，这种类型的健值对会在数据库中把单独的__________和单独的__________关联起来，被关联的键和值可以是普通的__________，也可以是__________,__________,__________压缩文件等二进制数据。</h3>
+<p><em>正确答案：</em></p>
+<p>(1) 一个键</p>
+<p>(2) 一个值</p>
+<p>(3) 文字数据</p>
+<p>(4) 图片</p>
+<p>(5) 视频</p>
+<p>(6) 音频</p>
+<h3 id="执行下列命令后键-password的值是_______________">执行下列命令后，键 password的值是_______________</h3>
+<h3 id="1270016379set-password-123456-nxok1270016379set-password-666666-nx">127.0.0.1:6379&gt;SET password &ldquo;123456&rdquo; NXOK127.0.0.1:6379&gt;SET password &ldquo;666666&rdquo; NX</h3>
+<p><em>正确答案：</em></p>
+<p>(1) 123456;&ldquo;123456&rdquo;</p>
+<h3 id="对一个有值的键password执行下列命令后get命令的返回结果是_______________">对一个有值的键password执行下列命令后，GET命令的返回结果是_______________</h3>
+<h3 id="1270016379set-password-123456-xx">127.0.0.1:6379&gt;SET password &ldquo;123456&rdquo; XX</h3>
+<h3 id="1270016379set-password-666666-xx">127.0.0.1:6379&gt;SET password &ldquo;666666&rdquo; XX</h3>
+<h3 id="1270016379get-password">127.0.0.1:6379&gt;GET password</h3>
+<p><em>正确答案：</em></p>
+<p>(1) 123456;&ldquo;123456&rdquo;</p>
+<h3 id="mset命令可以代替多条set命令只需要_______________从而有效地减少程序执行多个设置操作时的的时间以博客为例当用户想要注册博客时需要把用户的名字账号密码等多项信息存储起来并在用户登录的时候取出这些信息仿真以上实验-1270016379_____________________author-jack-account-10086-password-123456">MSET命令可以代替多条SET命令只需要_______________，从而有效地减少程序执行多个设置操作时的的时间。以博客为例，当用户想要注册博客时，需要把用户的名字、账号、密码等多项信息存储起来，并在用户登录的时候取出这些信息。仿真以上实验。 127.0.0.1:6379&gt;_____________________author &ldquo;Jack&rdquo; account &ldquo;10086&rdquo; password &ldquo;123456&rdquo;</h3>
+<h3 id="1270016379mget-auth-account-password">127.0.0.1:6379&gt;MGET auth account password</h3>
+<p><em>正确答案：</em></p>
+<p>(1) 一次网络通信</p>
+<p>(2) MSET</p>
+<p>(3) &ldquo;Jack&rdquo; ;Jack</p>
+<p>(4) &ldquo;10086&rdquo;;10086</p>
+<p>(5) &ldquo;123456&rdquo;;123456</p>
+<h3 id="以下代码的执行结果是______________________________">以下代码的执行结果是_______________、_______________</h3>
+<h3 id="1270016379mget-k1-k2">127.0.0.1:6379&gt;MGET k1 k2</h3>
+<h3 id="nil">(nil)</h3>
+<h3 id="nil-1">(nil)</h3>
+<h3 id="1270016379msetnx-k1-one-k2-two-k3-three">127.0.0.1:6379&gt;MSETNX k1 &ldquo;one&rdquo; k2 &ldquo;two&rdquo; k3 &ldquo;three&rdquo;</h3>
+<h3 id="1270016379mget-k1-k3">127.0.0.1:6379&gt;MGET k1 k3</h3>
+<p><em>正确答案：</em></p>
+<p>(1) (nil)</p>
+<p>(2) &ldquo;three&rdquo;;three</p>
+<h3 id="在存储文章信息的程序中经常会用到显示文章长度功能和显示文章开头部分内容的功能以下代码是这两个-功能的仿真实现填写返回结果">在存储文章信息的程序中，经常会用到显示文章长度功能和显示文章开头部分内容的功能。以下代码是这两个 功能的仿真实现，填写返回结果</h3>
+<h3 id="1270016379set-k1-hello-world">127.0.0.1:6379&gt;SET k1 &ldquo;hello world&rdquo;</h3>
+<h3 id="1270016379strlen-k1">127.0.0.1:6379&gt;STRLEN k1</h3>
+<h3 id="________________">________________</h3>
+<h3 id="1270016379getrange--11--5">127.0.0.1:6379&gt;GETRANGE -11 -5</h3>
+<h3 id="_____________">_____________</h3>
+<h3 id="1270016379setrange-k1-6-redis">127.0.0.1:6379&gt;SETRANGE k1 6 &ldquo;redis&rdquo;</h3>
+<h3 id="1270016379get-k1">127.0.0.1:6379&gt;GET k1</h3>
+<h3 id="_______________">_______________</h3>
+<p><em>正确答案：</em></p>
+<p>(1) 11</p>
+<p>(2) &ldquo;hello w&rdquo;</p>
+<p>(3) &ldquo;hello redis&rdquo;</p>
+<h3 id="很多程序在运行时会生成一些日志这些日志记录了程序的运行状态以及执行的重要操作为了记录程序的运行状态或者为了对日志进行分析需要把程序生成的日志存储起来高效的日志存储方式是这个程序会把一天之内产生的日志都存储在一个字符串键里面从而使用户可以非常高效地取得指定日期内产生的所有日志模拟仿真将日志记录在同一个键下">很多程序在运行时会生成一些日志，这些日志记录了程序的运行状态以及执行的重要操作。为了记录程序的运行状态，或者为了对日志进行分析，需要把程序生成的日志存储起来。高效的日志存储方式是，这个程序会把一天之内产生的日志都存储在一个字符串键里面，从而使用户可以非常高效地取得指定日期内产生的所有日志。模拟仿真将日志记录在同一个键下。</h3>
+<h3 id="1270016379get-06-jul">127.0.0.1:6379&gt;GET “06 Jul”</h3>
+<h3 id="server-startedredis-version-606">“Server started,Redis version 6.0.6&quot;</h3>
+<h3 id="1270016379____________-06-jul-the-server-is-now-ready-to-accept-connections-on-port-6379">127.0.0.1:6379&gt;____________ “06 Jul” &ldquo;The server is now ready to accept connections on port 6379&rdquo;</h3>
+<p><em>正确答案：</em></p>
+<p>(1) APPEND</p>
+<h3 id="在构建应用程序的时候经常会存储用户的idid通常以数字形式出现并且通过递增的方式来创建出新的id如当前最新的id值为10086下一个id就是10087以此类推模拟仿真这一过程1270016379set-userid-10086">在构建应用程序的时候，经常会存储用户的ID，ID通常以数字形式出现，并且通过递增的方式来创建出新的ID。如当前最新的ID值为10086，下一个ID就是10087，以此类推。模拟仿真这一过程。127.0.0.1:6379&gt;SET user:id &ldquo;10086&rdquo;</h3>
+<h3 id="1270016379____________-userid">127.0.0.1:6379&gt;____________ user:id</h3>
+<p><em>正确答案：</em></p>
+<p>(1) INCR</p>
+<h3 id="对于网站的访客数量某个视频的播放量等信息需要计数器来实现模拟仿真这一过程将网站访客数量加1">对于网站的访客数量，某个视频的播放量等信息需要计数器来实现。模拟仿真这一过程，将网站访客数量加1</h3>
+<h3 id="1270016379set-counterpage_view-1">127.0.0.1:6379&gt;SET counter:page_view 1</h3>
+<h3 id="1270016379___________________-counterpage_view">127.0.0.1:6379&gt;___________________ counter:page_view</h3>
+<h3 id="2">2</h3>
+<p><em>正确答案：</em></p>
+<p>(1) INCR</p>
+<h3 id="为了防止用户的账号遭到暴力破解网上银行通常会对访客的密码试错次数进行限制如果一个访客在尝试登录某个账号的过程中连续好几次输入了密码那么这个账号将被冻结模拟仿真这一过程将输入密码次数减1">为了防止用户的账号遭到暴力破解，网上银行通常会对访客的密码试错次数进行限制，如果一个访客在尝试登录某个账号的过程中，连续好几次输入了密码，那么这个账号将被冻结。模拟仿真这一过程，将输入密码次数减1</h3>
+<h3 id="1270016379set-max_execute_times-3">127.0.0.1:6379&gt;SET max_execute_times 3</h3>
+<h3 id="1270016379__________________-max_execute_times">127.0.0.1:6379&gt;__________________ max_execute_times</h3>
+<p><em>正确答案：</em></p>
+<p>(1) DECR</p>
+
+    <h4><a href="https://xin.github.io">Back to Home</a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+    <p>
+&copy; 
+
+    
+
+<span id="thisyear">2023</span>
+
+
+</p>
+    <p class="text-center">
+        
+        
+        
+        
+        
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: null ,
+        onePass: null , 
+        speedFactor: null 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

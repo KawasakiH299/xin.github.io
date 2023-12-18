@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>My New Hugo Site</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://xin.github.io/favicon.ico">
+    <link rel="canonical" href="https://xin.github.io">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://xin.github.io">My New Hugo Site</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>linux主机准备 - Fri, Aug 4, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <h4 id="配置网络">配置网络</h4>
+<pre tabindex="0"><code>[root@hadoop102 ~]# cat /etc/sysconfig/network-scripts/ifcfg-ens33
+TYPE=&#34;Ethernet&#34;
+PROXY_METHOD=&#34;none&#34;
+BROWSER_ONLY=&#34;no&#34;
+BOOTPROTO=&#34;static&#34;
+DEFROUTE=&#34;yes&#34;
+IPV4_FAILURE_FATAL=&#34;no&#34;
+IPV6INIT=&#34;yes&#34;
+IPV6_AUTOCONF=&#34;yes&#34;
+IPV6_DEFROUTE=&#34;yes&#34;
+IPV6_FAILURE_FATAL=&#34;no&#34;
+IPV6_ADDR_GEN_MODE=&#34;stable-privacy&#34;
+NAME=&#34;ens33&#34;
+UUID=&#34;206e5e6f-0b43-4991-88ec-57c93e914ac7&#34;
+DEVICE=&#34;ens33&#34;
+ONBOOT=&#34;yes&#34;
+
+IPADDR=192.168.121.146
+NETMAS=255.255.255.0
+GATEWAY=192.168.121.2
+DNS1=114.114.114.114
+</code></pre><h4 id="修改主机名">修改主机名</h4>
+<pre tabindex="0"><code>[root@hadoop100 ~]# vim /etc/hostname
+hadoop102
+</code></pre><h4 id="添加本地nds解析">添加本地NDS解析</h4>
+<pre tabindex="0"><code>[root@hadoop100 ~]# vim /etc/hosts
+添加如下内容
+192.168.10.100 hadoop100
+192.168.10.101 hadoop101
+192.168.10.102 hadoop102
+192.168.10.103 hadoop103
+192.168.10.104 hadoop104
+</code></pre>
+    <h4><a href="https://xin.github.io">Back to Home</a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+    <p>
+&copy; 
+
+    
+
+<span id="thisyear">2023</span>
+
+
+</p>
+    <p class="text-center">
+        
+        
+        
+        
+        
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: null ,
+        onePass: null , 
+        speedFactor: null 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>My New Hugo Site</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://xin.github.io/favicon.ico">
+    <link rel="canonical" href="https://xin.github.io">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://xin.github.io">My New Hugo Site</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>redis--常用数据类型Zset - Wed, Mar 1, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <h2 id="有序集合zset主要用于数值的排名">有序集合Zset：主要用于数值的排名</h2>
+<h3 id="是一个没有重复元素的字符串集合">是一个没有重复元素的字符串集合</h3>
+<h3 id="于set的不同之处时有序集合zset的每个成员都关联了一个评分score这个评分被用来按照从最低分到最高峰的方式排序集合中的成员集合的成员时唯一的但评分可以是重复的">于set的不同之处时有序集合Zset的每个成员都关联了一个评分（score），这个评分被用来按照从最低分到最高峰的方式排序集合中的成员，集合的成员时唯一的但评分可以是重复的</h3>
+<h3 id="zadd-key--score1-value1-score2--value2">zadd key  score1 value1 score2  value2</h3>
+<ul>
+<li>zadd  top  200  python  300  c++  400  java</li>
+<li>将一个或多个member元素及其score值加入到有序集合</li>
+</ul>
+<h3 id="zrange--key--start-stop--withscores">zrange  key  start stop  (withscores)</h3>
+<ul>
+<li>zrange top 0 -1 （withscores）</li>
+<li>取出0到-1的value值（和score的值）</li>
+</ul>
+<h3 id="zscore-key--value">zscore key  value</h3>
+<ul>
+<li>zscore z1 java</li>
+<li>获取java的scores值</li>
+</ul>
+<h3 id="zrangebyscore--key--min---max-withscores">zrangebyscore  key  min   max （withscores）</h3>
+<ul>
+<li>zrangebyscore top   200  400</li>
+<li>取出score为200到400的value值，从小到大依次排序</li>
+</ul>
+<h3 id="zrevrangebyscore--key--max---minwithscores">zrevrangebyscore  key  max   min（withscores）</h3>
+<ul>
+<li>zrangebyscore top   400  200</li>
+<li>取出score为400到200的value值，从大到小依次排序</li>
+</ul>
+<h3 id="zincrby--key--n数值-value">zincrby  key  n（数值） value</h3>
+<ul>
+<li>zincrby  top  50  java</li>
+<li>给java的score加50</li>
+</ul>
+<h3 id="zrem-key-value">zrem key value</h3>
+<ul>
+<li>
+<p>zrem top java</p>
+</li>
+<li>
+<p>删除java</p>
+</li>
+</ul>
+<h3 id="zcount--key--min--max">zcount  key  min  max</h3>
+<ul>
+<li>zcount  top 100  300</li>
+<li>统计在分数区间的元素个数</li>
+</ul>
+<h3 id="zrank-key--value">zrank key  value</h3>
+<ul>
+<li>zrank top java</li>
+<li>返回java在top中的排名</li>
+</ul>
+<h2 id="案例用zset实现一个文章访问量的排行榜">案例：用Zset实现一个文章访问量的排行榜</h2>
+
+    <h4><a href="https://xin.github.io">Back to Home</a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+    <p>
+&copy; 
+
+    
+
+<span id="thisyear">2023</span>
+
+
+</p>
+    <p class="text-center">
+        
+        
+        
+        
+        
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: null ,
+        onePass: null , 
+        speedFactor: null 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

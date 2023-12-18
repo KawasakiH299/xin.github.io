@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>My New Hugo Site</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://xin.github.io/favicon.ico">
+    <link rel="canonical" href="https://xin.github.io">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://xin.github.io">My New Hugo Site</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>名字空间 - Thu, May 4, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <p>与 <strong>作用域</strong> 相对应， <em>Python</em> 在运行时借助 <em>dict</em> 对象保存作用域中的名字，构成动态的 <strong>名字空间</strong> 。这样的名字空间总共有 <em>4</em> 个：</p>
+<ul>
+<li>内建名字空间</li>
+<li>全局名字空间</li>
+<li>闭包名字空间</li>
+<li>局部名字空间</li>
+</ul>
+<p><em>Python</em> 语句在查找名字时，按照 <em>Local</em> <em>Enclosing</em> <em>Global</em> <em>Builtin</em> 这样的顺序在 <em>4</em> 个名字空间中查找，这也就是所谓的 <strong>LEGB</strong> 规则。</p>
+<h2 id="名字空间">名字空间</h2>
+<p><strong>作用域</strong> 是语法层面的概念，是静态的。当程序开始执行后，作用域中的名字绑定关系需要存储在某个地方，这个地方就是 <strong>名字空间</strong> 。由于名字绑定关系是有 <strong>名字</strong> 和 <strong>对象</strong> 组成的键值对，因而 <em>dict</em> 对象是理想的存储容器。</p>
+<h3 id="globals">Globals</h3>
+<p>在 <em>Python</em> 中，每个 <strong>模块</strong> 背后都有一个 <em>dict</em> 对象，用于存储 <strong>全局作用域</strong> 中的名字，这就是 <strong>全局名字空间</strong> ( <em>Globals</em> )。</p>
+<ul>
+<li>模块的 <strong>属性空间</strong> 以及 <strong>全局名字空间</strong> 是同一个东西，都藏身于同一个 <em>dict</em> 对象。</li>
+</ul>
+<h3 id="locals">Locals</h3>
+<p><em>Python</em> 执行一个作用域内的代码时，需要一个容器来存储当前作用域内的名字，这就是 <strong>局部名字空间</strong> ( <em>Locals</em> )。</p>
+<p>代码语句中涉及的名字查找，均在这个两个名字空间中进行：先查找局部名字空间，再查找全局名字空间。</p>
+<h3 id="enclosings">Enclosings</h3>
+<p>在作用域存在嵌套的情况下， <em>Python</em> 将内层代码块中依赖的所有外层名字存储在一个容器内，这就是 <strong>闭包名字空间</strong> ( <em>Enclosings</em> )。</p>
+<h3 id="builtin">Builtin</h3>
+<p><em>Python</em> 在 <em>builtin</em> 模块中提供了很多内建函数和类型，构成运行时的另一个名字空间 <strong>内建名字空间</strong> ( <em>Builtin</em> )。像 <em>print</em> 这样的内建函数或类型，均需要在这个名字空间中查找：</p>
+<p>全局名字空间中有一个名字指向内建名字空间：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import builtins
+circle.<strong>builtins</strong> is builtins.<strong>dict</strong>
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>当我们往 <em>dict</em> 对象中添加名字 <em>name</em> 后，属性查找便成功了：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>a.<strong>dict</strong>[&rsquo;name&rsquo;] = &rsquo;tom&rsquo;
+a.name
+&rsquo;tom'</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+    <h4><a href="https://xin.github.io">Back to Home</a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+    <p>
+&copy; 
+
+    
+
+<span id="thisyear">2023</span>
+
+
+</p>
+    <p class="text-center">
+        
+        
+        
+        
+        
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: null ,
+        onePass: null , 
+        speedFactor: null 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

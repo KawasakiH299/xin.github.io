@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>My New Hugo Site</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://xin.github.io/favicon.ico">
+    <link rel="canonical" href="https://xin.github.io">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://xin.github.io">My New Hugo Site</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>Git-note - Sun, Apr 2, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <h4 id="git版本管理">git版本管理</h4>
+<ul>
+<li>目的：
+<ul>
+<li>协同多人开发</li>
+<li>更新代码版本，同时不删除之前的版本</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="国内镜像httpnpmtaobaoorgmirrorsgit-for-windows">国内镜像：http://npm.taobao.org/mirrors/git-for-windows/</h3>
+<hr>
+<h3 id="操作界面">操作界面</h3>
+<ul>
+<li>
+<p>GUI：图形化界面</p>
+</li>
+<li>
+<p>BUSH：linux操作</p>
+</li>
+<li>
+<p>CMD：win操作</p>
+</li>
+</ul>
+<hr>
+<h3 id="常用linux命令">常用linux命令</h3>
+<p>1）、cd : 改变目录。</p>
+<p>2）、cd . . 回退到上一个目录，直接cd进入默认目录</p>
+<p>3）、pwd : 显示当前所在的目录路径。</p>
+<p>4）、ls(ll):  都是列出当前目录中的所有文件，只不过ll(两个ll)列出的内容更为详细。</p>
+<p>5）、touch : 新建一个文件 如 touch index.js 就会在当前目录下新建一个index.js文件。</p>
+<p>6）、rm:  删除一个文件, rm index.js 就会把index.js文件删除。</p>
+<p>7）、mkdir:  新建一个目录,就是新建一个文件夹。</p>
+<p>8）、rm -r :  删除一个文件夹, rm -r src 删除src目录</p>
+<p>9）、mv 移动文件, mv index.html src index.html 是我们要移动的文件, src 是目标文件夹,当然, 这样写,必须保证文件和目标文件夹在同一目录下。</p>
+<p>10）、reset 重新初始化终端/清屏。</p>
+<p>11）、clear 清屏。</p>
+<p>12）、history 查看命令历史。</p>
+<p>13）、help 帮助。</p>
+<p>14）、exit 退出。</p>
+<p>15）、#表示注释</p>
+<hr>
+<h3 id="git中不同颜色的表示">Git中不同颜色的表示</h3>
+<ul>
+<li>蓝色的表示目录</li>
+<li>白色的表示文件</li>
+<li>绿色的表示程序</li>
+</ul>
+<hr>
+<h3 id="查看git的配置">查看Git的配置</h3>
+<ul>
+<li>用户自己的配置：
+<ul>
+<li>git config &ndash;global &ndash;list</li>
+</ul>
+</li>
+<li>系统的配置：
+<ul>
+<li>git config &ndash;system &ndash;list</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="配置自己的标识安装后必须要配置的">配置自己的标识（安装后必须要配置的）</h3>
+<ul>
+<li>配置自己的名称
+<ul>
+<li>git config &ndash;global user.name &ldquo;kawasaki-Ginlt&rdquo;</li>
+</ul>
+</li>
+<li>配置邮箱
+<ul>
+<li>git config &ndash;global user.email <a href="mailto:908528125@qq.com">908528125@qq.com</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="git的四个目录">Git的四个目录</h3>
+<ul>
+<li>
+<p>工作区（Workspace）：在本地写项目代码的路径</p>
+<ul>
+<li>将工作区的临时改变的放入暂存区
+<ul>
+<li>git add  .</li>
+<li>(.）代表所有文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>暂存区（Stage）：只是一些文件，保存临时改动的信息-</p>
+<ul>
+<li>将暂存区的代码放入仓库区
+<ul>
+<li>git commit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>仓库区（Respository）：本地存放完整项目的</p>
+<ul>
+<li>仓库区推入远程
+<ul>
+<li>git push</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>远程仓库（Remote）：存放代码的服务器</p>
+</li>
+<li>
+<p>.git：存放Git管理信息的目录，初始化仓库的时候自动创建</p>
+</li>
+<li>
+<p>Stash：隐藏，是一个工作状态保存栈，用于保存/恢复WorkSpace中的临时状态。</p>
+</li>
+</ul>
+<hr>
+<h3 id="本地仓库搭建">本地仓库搭建</h3>
+<ul>
+<li>git init</li>
+</ul>
+<hr>
+<h3 id="克隆远程仓库">克隆远程仓库</h3>
+<ul>
+<li>git clone [url]</li>
+</ul>
+<hr>
+<h3 id="git文件操作">Git文件操作</h3>
+<blockquote>
+<p>版本控制就是对文件的状态进行更新，首先需要知道文件的状态，首先得跟踪文件(untracked)</p>
+<p>git管理的文件有三种状态：已修改（modified）,已暂存（staged）,已提交(committed)</p>
+</blockquote>
+<ul>
+<li>
+<p>跟踪文件  git add .  （即提交到暂存区）</p>
+</li>
+<li>
+<p>查看状态  git status</p>
+<p><em>git commit -m</em></p>
+</li>
+</ul>
+<pre tabindex="0"><code>#查看指定文件状态git status [filename]#查看所有文件状态
+git status# git add .                  添加所有文件到暂存区# 
+git commit -m &#34;消息内容&#34;    提交暂存区中的内容到本地仓库 -m 提交信息
+</code></pre><ul>
+<li>不想上传一些文件，可写一个配置来记录忽略文件，在主目录下建立&quot;.gitignore&quot;文件，此文件有如下规则：</li>
+</ul>
+<pre tabindex="0"><code>
+#为注释
+*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！
+!lib.txt     #但lib.txt除外
+/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp
+build/       #忽略build/目录下的所有文件
+doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+</code></pre><hr>
+<h3 id="生成ssh密钥">生成ssh密钥</h3>
+<ul>
+<li>
+<p>ssh-keygen -t rsa （参数是指定加密算法）</p>
+</li>
+<li>
+<p>在win账户目录下可以查看到xx.pub</p>
+</li>
+</ul>
+<hr>
+<h3 id="git-分支">Git 分支</h3>
+<ul>
+<li>分支并行执行时，可存在多个版本</li>
+<li>分支有交集时，可选择保存那个版本</li>
+<li>git分支中常用指令：</li>
+</ul>
+<pre tabindex="0"><code># 列出所有本地分支
+git branch
+
+# 列出所有远程分支
+git branch -r
+
+# 新建一个分支，但依然停留在当前分支
+git branch [branch-name]
+
+# 新建一个分支，并切换到该分支
+git checkout -b [branch]
+
+# 合并指定分支到当前分支
+$ git merge [branch]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+</code></pre><ul>
+<li>master：为主分支</li>
+</ul>
+<hr>
+<h3 id="版本切换">版本切换</h3>
+<ul>
+<li>首先查看提交日志
+<ul>
+<li>git log</li>
+<li>从日志中找到需要的版本号</li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code class="language-commit" data-lang="commit">commit a3f6a900663f5dfd0875343f508639e0b2cde5a6 (HEAD -&gt; master)
+</code></pre><ul>
+<li>
+<p>选择版本</p>
+<ul>
+<li>git reset [commit_id]  版本号
+<ul>
+<li>&ndash;mixed (默认选项)</li>
+<li>&ndash;soft</li>
+<li>&ndash;hard</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>&ndash;mixed参数的变化情况是：</p>
+<ul>
+<li>1，版本指针head和分支尖端指针指向我们指定的版本</li>
+<li>2，暂存区指针index指向我们指定的版本</li>
+<li>3，工作区的内容保持不变</li>
+</ul>
+</li>
+<li>
+<p>&ndash;soft参数的变化情况是：</p>
+<ul>
+<li>1，版本指针head和分支尖端指针指向我们指定的版本</li>
+<li>2，暂存区指针index保持不变</li>
+<li>3，工作区的内容保持不变</li>
+</ul>
+</li>
+<li>
+<p>&ndash;hard参数的变化情况是：</p>
+<ul>
+<li>1，版本指针head和分支尖端指针指向我们指定的版本</li>
+<li>2，暂存区指针index指向我们指定的版本</li>
+<li>3，将工作区的内容重置为暂存区的内容</li>
+</ul>
+</li>
+</ul>
+<p>最新版本不会被删除</p>
+<ul>
+<li>
+<p>可通过查看切换之前的版本</p>
+<ul>
+<li>git reflog</li>
+<li>git  reset &ndash;hard 版本号</li>
+</ul>
+</li>
+<li>
+<p>文件修改的内容也能被记录</p>
+</li>
+</ul>
+<h2 id="想要版本切换必须先进暂存区在进本地仓库">想要版本切换必须先进暂存区在进本地仓库</h2>
+<h3 id="将本地仓库的代码推送到远程仓库">将本地仓库的代码推送到远程仓库</h3>
+<ul>
+<li>与远程仓库建立连接</li>
+</ul>
+<pre tabindex="0"><code>&gt;&gt;&gt;git remote add origin 仓库地址
+</code></pre><ul>
+<li>若报错</li>
+</ul>
+<pre tabindex="0"><code>fatal:remote origin already exists
+
+## 报错原因：
+##已经将一个远程仓库添加并命名为origin了，所以现在你是在尝试将另一个远程仓库添加并命名为origin，##显然这是一个错误，一个origin不能指向两个仓库
+
+## 解决办法：
+## 使用set-url修改origin仓库的url
+&gt;&gt;&gt;git remote set-url origin 新的远程仓库链接
+## 先将已经添加过的，命名为origin的远程仓库给删了，然后重新添加
+&gt;&gt;&gt;git remote rm origin
+&gt;&gt;&gt;git remote add origin 新的远程仓库链接
+</code></pre><ul>
+<li>将当前代码的master分支上传到gitee远程仓库</li>
+</ul>
+<pre tabindex="0"><code># 不加这句可能报错，原因是 gitee 中的 README.md 文件不在本地仓库中。
+# 可以通过该命令进行代码合并
+&gt;&gt;&gt;git pull --rebase origin master
+&gt;&gt;&gt;git push -u origin master
+###第一次上传可能会让输入命令
+</code></pre>
+    <h4><a href="https://xin.github.io">Back to Home</a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+    <p>
+&copy; 
+
+    
+
+<span id="thisyear">2023</span>
+
+
+</p>
+    <p class="text-center">
+        
+        
+        
+        
+        
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: null ,
+        onePass: null , 
+        speedFactor: null 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

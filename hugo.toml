@@ -3,7 +3,9 @@ baseURL = 'https://xin.github.io'
 title = 'KawasakiH299 Blog'
 languageCode = "en"
 DefaultContentLanguage = "en"
-
+[module]
+  [[module.imports]]
+    path = "gitlab.com/jmfergeau/hugo.386"
 
 [Params]
     # The name to display as main title in the home page

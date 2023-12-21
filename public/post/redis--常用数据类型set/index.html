@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>KawasakiH299 Blog</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://baidu.com/favicon.ico">
+    <link rel="canonical" href="https://baidu.com">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://baidu.com">KawasakiH299 Blog</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                        
+                            <li>
+                                <a href="/about/">
+                                    
+                                    <span>About</span>
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/post/">
+                                    
+                                    <span>All posts</span>
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>redis--常用数据类型Set - Mon, Feb 27, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <h3 id="set是string类型的无序集合底层是value为null的hash表所以添加--查找--删除的复杂度都是o1">Set是String类型的无序集合，底层是value为null的hash表，所以添加  查找  删除的复杂度都是O（1）</h3>
+<h3 id="一个算法随着数据的增加执行时间的长短如果是o1数据增加查找数据的时间不变">一个算法，随着数据的增加，执行时间的长短，如果是O（1），数据增加，查找数据的时间不变</h3>
+<h3 id="sadd--key--value1--value2-value3">sadd  key  value1  value2 value3</h3>
+<ul>
+<li>sadd  s1 v1  v2  v3</li>
+<li>将一个或多个member元素添加到集合key中</li>
+</ul>
+<h3 id="smembers-key">smembers key</h3>
+<ul>
+<li>smembers s1</li>
+<li>取出该集合的所有值</li>
+</ul>
+<h3 id="ismember-key-value">ismember key value</h3>
+<ul>
+<li>ismember s1  v1</li>
+<li>判断集合s1中是否存在v1</li>
+</ul>
+<h3 id="scard-key">scard key</h3>
+<ul>
+<li>scard s1</li>
+<li>返回集合的元素个数</li>
+</ul>
+<h3 id="srem-key-value1-value2">srem key value1 value2</h3>
+<ul>
+<li>srem s1 v1 v2</li>
+<li>删除集合s1中的v1  v2</li>
+</ul>
+<h3 id="spop--key">spop  key</h3>
+<ul>
+<li>spop s1</li>
+<li>从s1集合中随机吐出一个元素</li>
+</ul>
+<h3 id="srandmember-key-n数量">srandmember key n（数量）</h3>
+<ul>
+<li>srandmember s1 2</li>
+<li>从集合s1中随机取出2个元素，不会从集合中删除</li>
+</ul>
+<h3 id="smove-set1移动元素的集合--set2目标集合value">smove set1（移动元素的集合）  set2（目标集合）value</h3>
+<ul>
+<li>smove s1 s2 v1</li>
+<li>将s1集合中的v1移动到s2</li>
+</ul>
+<h3 id="sinter-key1--key2">sinter key1  key2</h3>
+<ul>
+<li>sinter  s1  s2</li>
+<li>返回两个集合的交集元素</li>
+</ul>
+<h3 id="sunion-key1--key2">sunion key1  key2</h3>
+<ul>
+<li>sunion s1  s2</li>
+<li>返回两个集合的并集</li>
+</ul>
+<h3 id="sdiff-key1--kdy2">sdiff key1  kdy2</h3>
+<ul>
+<li>sdiff  s1  s2</li>
+<li>返回两个集合的差集</li>
+</ul>
+
+    <h4><a href="https://baidu.com"></a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+
+    <p class="text-center">
+        <a href="https://facebook.com">Facebook</a> 
+        <a href="https://twitter.com">Twitter</a> 
+        <a href="https://linkedin.com">Linkedin</a> 
+        <a href="https://github.com">GitHub</a> 
+        <a href="https://gitlab.com">GitLab</a>
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: false ,
+        onePass: false , 
+        speedFactor: 1 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

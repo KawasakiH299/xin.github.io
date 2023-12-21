@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KawasakiH299 Blog</title>
+    <link>https://baidu.com/</link>
+    <description>Recent content on KawasakiH299 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://baidu.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux卸载自带python</title>
+      <link>https://baidu.com/post/linux%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E7%9A%84python2.7/</link>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/linux%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E7%9A%84python2.7/</guid>
+      <description>1.强制删除已安装python及其关联&#xA;rpm -qa|grep python|xargs rpm -ev &amp;ndash;allmatches &amp;ndash;nodeps&#xA;2.删除残余文件&#xA;whereis python|xargs rm -frv&#xA;Liunx安装python3:&#xA;先进入或者创建一个文件夹，比如 cd /home&#xA;1.下载python3&#xA;wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz&#xA;解压安装包 tar zxvf Python-3.7.0.tgz&#xA;解压好后转到该安装包目录下 cd Python-3.7.0&#xA;对安装进行配置，并指定安装路径 ./configure -prefix=/usr/local/python37&#xA;5.make 编译&#xA;6.make install 安装</description>
+    </item>
+    <item>
+      <title>excalidraw笔记绘板搭建</title>
+      <link>https://baidu.com/post/excalidraw%E7%AC%94%E8%AE%B0%E7%BB%98%E6%9D%BF%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/excalidraw%E7%AC%94%E8%AE%B0%E7%BB%98%E6%9D%BF%E6%90%AD%E5%BB%BA/</guid>
+      <description>excalidraw笔记绘板搭建&#xA;1，首先安装docker&#xA;2，安装docker-compose&#xA;yum -y install epel-release&#xD;yum install -y docker-compose&#xD;yum install python-pip&#xD;wget https://github.com/docker/compose/releases/download/1.14.0-rc2/docker-compose-Linux-x86_64&#xD;mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose&#xD;chmod +x /usr/local/bin/docker-compose&#xD;docker-compose -version 3，编写docker-compose.yaml文件&#xA;version: &amp;#34;3&amp;#34;&#xD;services:&#xD;excalidrwa:&#xD;image: excalidraw/excalidraw&#xD;restart: unless-stopped&#xD;ports:&#xD;- 3000:80 4,启动excalidraw&#xA;docker-compose up -d&#xD;docker-compose ps #查看端口 </description>
+    </item>
+    <item>
+      <title>yum 通过网络更换yum源</title>
+      <link>https://baidu.com/post/yum%E6%9B%B4%E6%8D%A2%E9%98%BF%E9%87%8C%E6%BA%90/</link>
+      <pubDate>Thu, 09 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/yum%E6%9B%B4%E6%8D%A2%E9%98%BF%E9%87%8C%E6%BA%90/</guid>
+      <description>1、yum源配置（网络）：&#xA;1.1先备份原有的yum源：&#xA;1 [root@localhost ~]# mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.back 1.2下载新的yum源（阿里）：&#xA;1 wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo 2 或者 3 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo 1.3清除原有yum缓存：&#xA;1 [root@localhost ~]# yum clean all 1.4生成新的缓存：&#xA;1 [root@localhost ~]# yum makecache</description>
+    </item>
+    <item>
+      <title>git pull  stpe</title>
+      <link>https://baidu.com/post/git-pull-step/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/git-pull-step/</guid>
+      <description>Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/RBlogdown $ git init Initialized empty Git repository in D:/RBlogdown/.git/&#xA;Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/RBlogdown (master) $ git remote add origin git@github.com:KawasakiH299/R_BlogDown.com-.git&#xA;Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/RBlogdown (master) $ git branch -m main&#xA;Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/RBlogdown (main) $ git pull &amp;ndash;rebase origin main remote: Enumerating objects: 546, done. remote: Counting objects: 100% (205/205), done. remote: Compressing objects: 100% (116/116), done. remote: Total 546 (delta 112), reused 172 (delta 84), pack-reused 341 Receiving objects: 100% (546/546), 183.</description>
+    </item>
+    <item>
+      <title>git push stpe</title>
+      <link>https://baidu.com/post/git-push-step/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/git-push-step/</guid>
+      <description>Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/Projects/Python-project&#xA;$ git init Initialized empty Git repository in D:/Projects/Python-projects/Data/.git/&#xA;Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/Projects/Python-projects/Data (master) $ git branch -m main&#xA;Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/Projects/Python-projects/Data (main) $ git remote add origin git@github.com:KawasakiH299/Data-Structure.git Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/Projects/Python-projects/Data (main) $ git add .&#xA;Kawasaki-Ginlt@Kawasaki-Gin MINGW64 /d/Projects/Python-projects/Data (main) $ git commit -m &amp;lsquo;version:1.0&amp;rsquo; [main (root-commit) 3316c0e] version:1.0 5 files changed, 251 insertions(+) create mode 100644 &amp;ldquo;\345\215\225\351\223\276\350\241\250/README&amp;rdquo; create mode 100644 &amp;ldquo;\345\215\225\351\223\276\350\241\250/SingleList.py&amp;rdquo; create mode 100644 &amp;ldquo;\345\215\225\351\223\276\350\241\250/init.py&amp;rdquo; create mode 100644 &amp;ldquo;\345\215\225\351\223\276\350\241\250/demon02.</description>
+    </item>
+    <item>
+      <title>非HA的hadoop集群启动操作</title>
+      <link>https://baidu.com/post/%E9%9D%9Eha%E7%9A%84hadoop%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E9%9D%9Eha%E7%9A%84hadoop%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E6%93%8D%E4%BD%9C/</guid>
+      <description>ResourceManager要在配置为ResourceManager的节点上启动</description>
+    </item>
+    <item>
+      <title>hadoop集群完善（非HA）</title>
+      <link>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E5%AE%8C%E5%96%84%E9%9D%9Eha/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E5%AE%8C%E5%96%84%E9%9D%9Eha/</guid>
+      <description>配置历史服务器 为了查看程序的历史运行情况，需要配置一下历史服务器。具&#xA;vim mapred-site.xml&#xD;在该文件里面增加如下配置。&#xD;&amp;lt;!-- 历史服务器端地址 --&amp;gt;&#xD;&amp;lt;property&amp;gt;&#xD;&amp;lt;name&amp;gt;mapreduce.jobhistory.address&amp;lt;/name&amp;gt;&#xD;&amp;lt;value&amp;gt;hadoop102:10020&amp;lt;/value&amp;gt;&#xD;&amp;lt;/property&amp;gt;&#xD;&amp;lt;!-- 历史服务器 web 端地址 --&amp;gt;&#xD;&amp;lt;property&amp;gt;&#xD;&amp;lt;name&amp;gt;mapreduce.jobhistory.webapp.address&amp;lt;/name&amp;gt;&#xD;&amp;lt;value&amp;gt;hadoop102:19888&amp;lt;/value&amp;gt;&#xD;&amp;lt;/property&amp;gt; 启动历史服务器 mapred --daemon start historyserver Web查看历史服务器 http://hadoop102:19888/jobhistory 配置日志的聚集 日志聚集概念：应用运行完成以后，将程序运行日志信息上传到 HDFS 系统上&#xA;vim yarn-site.xml&#xD;&amp;lt;!-- 开启日志聚集功能 --&amp;gt;&#xD;&amp;lt;property&amp;gt;&#xD;&amp;lt;name&amp;gt;yarn.log-aggregation-enable&amp;lt;/name&amp;gt;&#xD;&amp;lt;value&amp;gt;true&amp;lt;/value&amp;gt;&#xD;&amp;lt;/property&amp;gt;&#xD;&amp;lt;!-- 设置日志聚集服务器地址 --&amp;gt;&#xD;&amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.log.server.url&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;http://hadoop102:19888/jobhistory/logs&amp;lt;/value&amp;gt;&#xD;&amp;lt;/property&amp;gt;&#xD;&amp;lt;!-- 设置日志保留时间为 7 天 --&amp;gt;&#xD;&amp;lt;property&amp;gt;&#xD;&amp;lt;name&amp;gt;yarn.log-aggregation.retain-seconds&amp;lt;/name&amp;gt;&#xD;&amp;lt;value&amp;gt;604800&amp;lt;/value&amp;gt;&#xD;&amp;lt;/property&amp;gt; Web查看历史服务器 http://hadoop102:19888/jobhistory 集群时间同步 如果服务器在公网环境（能连接外网），可以不采用集群时间同步，因为服务器会定期&#xA;和公网时间进行校准；&#xA;如果服务器在内网环境，必须要配置集群时间同步，否则时间久了，会产生时间偏差，&#xA;导致集群执行任务时间不同步。&#xA;sudo systemctl status ntpd&#xA;sudo systemctl status ntpd</description>
+    </item>
+    <item>
+      <title>hadoop集群配置非HA</title>
+      <link>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E9%9D%9Eha/</link>
+      <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E9%9D%9Eha/</guid>
+      <description>Haddop配置文件分为两类： 默认配置文件 默认文件 文件存放在hadoop的jar包中的位置 core-default.xml hadoop-common-3.1.3.jar/core-default.xml hdfs-default.xm hadoop-hdfs-3.1.3.jar/hdfs-default.xml yarn-default.xml hadoop-yarn-common-3.1.3.jar/yarn-default.xml mapred-default.xm hadoop-mapreduce-client-core-3.1.3.jar/mapred-default.xml 自定义配置文件 core-site.xml hdfs-site.xml yarn-site.xml mapred-site.xml ssh免密登录： （2）生成公钥和私钥&#xD;[atguigu@hadoop102 .ssh]$ pwd&#xD;/home/atguigu/.ssh&#xD;[atguigu@hadoop102 .ssh]$ ssh-keygen -t rsa&#xD;然后敲（三个回车），就会生成两个文件 id_rsa（私钥）、id_rsa.pub（公钥）&#xD;（3）将公钥拷贝到要免密登录的目标机器上&#xD;[atguigu@hadoop102 .ssh]$ ssh-copy-id hadoop102&#xD;[atguigu@hadoop102 .ssh]$ ssh-copy-id hadoop103&#xD;[atguigu@hadoop102 .ssh]$ ssh-copy-id hadoop104 核心配置文件 核心配置文件 core-site.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&#xD;&amp;lt;?xml-stylesheet type=&amp;#34;text/xsl&amp;#34; href=&amp;#34;configuration.xsl&amp;#34;?&amp;gt;&#xD;&amp;lt;configuration&amp;gt;&#xD;&amp;lt;!-- 指定 NameNode 的地址 --&amp;gt;&#xD;&amp;lt;property&amp;gt;&#xD;&amp;lt;name&amp;gt;fs.defaultFS&amp;lt;/name&amp;gt;&#xD;&amp;lt;value&amp;gt;hdfs://hadoop102:8020&amp;lt;/value&amp;gt;&#xD;&amp;lt;/property&amp;gt;&#xD;&amp;lt;!-- 指定 hadoop 数据的存储目录 --&amp;gt;&#xD;&amp;lt;property&amp;gt;&#xD;&amp;lt;name&amp;gt;hadoop.tmp.dir&amp;lt;/name&amp;gt;&#xD;&amp;lt;value&amp;gt;/opt/module/hadoop-3.1.3/data&amp;lt;/value&amp;gt;&#xD;&amp;lt;/property&amp;gt;&#xD;&amp;lt;!</description>
+    </item>
+    <item>
+      <title>hadoop安装</title>
+      <link>https://baidu.com/post/hadoop%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/hadoop%E5%AE%89%E8%A3%85/</guid>
+      <description>hadoop安装 hadoop下载地址 Hadoop 下载地址：https://archive.apache.org/dist/hadoop/common/hadoop-3.1.3/&#xA;安装jdk hadoop需要jdk环境 解压JDK 到/opt/module 目录下 [atguigu@hadoop102 software]$ tar -zxvf jdk-8u212-linux-x64.tar.gz -C /opt/module/ 配置 JDK 环境变量 新建/etc/profile.d/my_env.sh 文件 [atguigu@hadoop102 ~]$ sudo vim /etc/profile.d/my_env.sh 添加如下内容 #JAVA_HOME export JAVA_HOME=/opt/module/jdk1.8.0_212 export PATH=$PATH:$JAVA_HOME/bin source 一下/etc/profile 文件，让新的环境变量 PATH 生效 [atguigu@hadoop102 ~]$ source /etc/profile 查看JDK 是否安装成功 [atguigu@hadoop102 ~]$ java -version 如果能看到以下结果，则代表 Java 安装成功。 java version &amp;#34;1.8.0_212&amp;#34; 安装hadoop 进入到 Hadoop 安装包路径下 [atguigu@hadoop102 ~]$ cd /opt/software/ 解压安装文件到 /opt/module 下面 [atguigu@hadoop102 software]$ tar -zxvf hadoop-3.1.3.tar.gz -C /opt/module/ Hadoop 添加到环境变量 获取 Hadoop 安装路径 [atguigu@hadoop102 hadoop-3.</description>
+    </item>
+    <item>
+      <title>HDFS的master节点状态为Standby解决方案</title>
+      <link>https://baidu.com/post/hdfs%E7%9A%84master%E8%8A%82%E7%82%B9%E7%8A%B6%E6%80%81%E4%B8%BAstandby%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/hdfs%E7%9A%84master%E8%8A%82%E7%82%B9%E7%8A%B6%E6%80%81%E4%B8%BAstandby%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>HDFS的master节点状态为Standby解决方案 更改节点状态 # 查看namenode节点的HA状态&#xD;[root@master ~]# hdfs haadmin -getServiceState nn1&#xD;standby&#xD;[root@master ~]# hdfs haadmin -getServiceState nn2&#xD;active&#xD;# 修改nn2为standby状态&#xD;[root@master ~]# hdfs haadmin -transitionToStandby --forcemanual nn2&#xD;# 修改nn1为active状态&#xD;[root@master ~]# hdfs haadmin -transitionToActive --forcemanual nn1 查看节点状态 [root@master ~]# hdfs haadmin -getServiceState nn1&#xD;active&#xD;[root@master ~]# hdfs haadmin -getServiceState nn2&#xD;standby </description>
+    </item>
+    <item>
+      <title>linux主机准备</title>
+      <link>https://baidu.com/post/linux%E4%B8%BB%E6%9C%BA%E5%87%86%E5%A4%87/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/linux%E4%B8%BB%E6%9C%BA%E5%87%86%E5%A4%87/</guid>
+      <description>配置网络 [root@hadoop102 ~]# cat /etc/sysconfig/network-scripts/ifcfg-ens33&#xD;TYPE=&amp;#34;Ethernet&amp;#34;&#xD;PROXY_METHOD=&amp;#34;none&amp;#34;&#xD;BROWSER_ONLY=&amp;#34;no&amp;#34;&#xD;BOOTPROTO=&amp;#34;static&amp;#34;&#xD;DEFROUTE=&amp;#34;yes&amp;#34;&#xD;IPV4_FAILURE_FATAL=&amp;#34;no&amp;#34;&#xD;IPV6INIT=&amp;#34;yes&amp;#34;&#xD;IPV6_AUTOCONF=&amp;#34;yes&amp;#34;&#xD;IPV6_DEFROUTE=&amp;#34;yes&amp;#34;&#xD;IPV6_FAILURE_FATAL=&amp;#34;no&amp;#34;&#xD;IPV6_ADDR_GEN_MODE=&amp;#34;stable-privacy&amp;#34;&#xD;NAME=&amp;#34;ens33&amp;#34;&#xD;UUID=&amp;#34;206e5e6f-0b43-4991-88ec-57c93e914ac7&amp;#34;&#xD;DEVICE=&amp;#34;ens33&amp;#34;&#xD;ONBOOT=&amp;#34;yes&amp;#34;&#xD;IPADDR=192.168.121.146&#xD;NETMAS=255.255.255.0&#xD;GATEWAY=192.168.121.2&#xD;DNS1=114.114.114.114 修改主机名 [root@hadoop100 ~]# vim /etc/hostname&#xD;hadoop102 添加本地NDS解析 [root@hadoop100 ~]# vim /etc/hosts&#xD;添加如下内容&#xD;192.168.10.100 hadoop100&#xD;192.168.10.101 hadoop101&#xD;192.168.10.102 hadoop102&#xD;192.168.10.103 hadoop103&#xD;192.168.10.104 hadoop104 </description>
+    </item>
+    <item>
+      <title>SSH无密登录配置</title>
+      <link>https://baidu.com/post/ssh%E6%97%A0%E5%AF%86%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/ssh%E6%97%A0%E5%AF%86%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE/</guid>
+      <description>生成公钥和私钥 [atguigu@hadoop102 .ssh]$ pwd&#xA;/home/atguigu/.ssh&#xA;[atguigu@hadoop102 .ssh]$ ssh-keygen -t rsa&#xA;然后敲（三个回车），就会生成两个文件 id_rsa（私钥）、id_rsa.pub（公钥）&#xA;将公钥拷贝到要免密登录的目标机器上 [atguigu@hadoop102 .ssh]$ ssh-copy-id hadoop102&#xA;需输入密码 [root@hadoop2102 .ssh]# ssh-copy-id hadoop2103&#xD;/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &amp;#34;/root/.ssh/id_rsa.pub&amp;#34;&#xD;The authenticity of host &amp;#39;hadoop2103 (192.168.121.147)&amp;#39; can&amp;#39;t be established.&#xD;ECDSA key fingerprint is SHA256:puxPIj2IoBCaUJjtytH4E+jhYTjj7eg59VoHSLUDSKw.&#xD;ECDSA key fingerprint is MD5:93:02:9b:c7:4d:e1:60:5b:b5:e0:d1:2e:11:04:15:12.&#xD;Are you sure you want to continue connecting (yes/no)? yes&#xD;/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed&#xD;/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys&#xD;root@hadoop2103&amp;#39;s password:&#xD;Number of key(s) added: 1&#xD;Now try logging into the machine, with: &amp;#34;ssh &amp;#39;hadoop2103&amp;#39;&amp;#34;&#xD;and check to make sure that only the key(s) you wanted were added.</description>
+    </item>
+    <item>
+      <title>xsync分发shell脚本</title>
+      <link>https://baidu.com/post/xsync%E5%88%86%E5%8F%91shell%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/xsync%E5%88%86%E5%8F%91shell%E8%84%9A%E6%9C%AC/</guid>
+      <description>编写xsync分发shell脚本 vim xsync #!/bin/bash&#xD;#1. 判断参数个数&#xD;if [ $# -lt 1 ]&#xD;then&#xD;echo Not Enough Arguement!&#xD;exit;&#xD;fi&#xD;#2. 遍历集群所有机器&#xD;for host in hadoop102 hadoop103 hadoop104&#xD;do&#xD;echo ==================== $host ====================&#xD;#3. 遍历所有目录，挨个发送&#xD;for file in $@&#xD;do&#xD;#4. 判断文件是否存在&#xD;if [ -e $file ]&#xD;then&#xD;#5. 获取父目录&#xD;pdir=$(cd -P $(dirname $file); pwd)&#xD;#6. 获取当前文件的名称&#xD;fname=$(basename $file)&#xD;ssh $host &amp;#34;mkdir -p $pdir&amp;#34;&#xD;rsync -av $pdir/$fname $host:$pdir&#xD;else&#xD;echo $file does not exists!</description>
+    </item>
+    <item>
+      <title>编写hadoop 高可用 shell脚本</title>
+      <link>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</guid>
+      <description>编写hadoop 高可用 shell脚本 vim hastart.sh #!/bin/bash&#xD;if [ $# -lt 1 ]&#xD;then&#xD;echo &amp;#34;No Args Input...&amp;#34;&#xD;exit ;&#xD;fi&#xD;case $1 in&#xD;&amp;#34;start&amp;#34;)&#xD;echo &amp;#34; =================== 启动 hadoop集群 ===================&amp;#34;&#xD;​```&#xD;echo &amp;#34; --------------- 启动 hdfs ---------------&amp;#34;&#xD;ssh hadoop102 &amp;#34;/opt/ha/hadoop-3.1.3/sbin/start-dfs.sh&amp;#34;&#xD;echo &amp;#34; --------------- 启动 yarn ---------------&amp;#34;&#xD;ssh hadoop103 &amp;#34;/opt/ha/hadoop-3.1.3/sbin/start-yarn.sh&amp;#34;&#xD;echo &amp;#34; --------------- 启动 historyserver ---------------&amp;#34;&#xD;ssh hadoop102 &amp;#34;/opt/ha/hadoop-3.1.3/bin/mapred --daemon start historyserver&amp;#34;&#xD;​```&#xD;;;&#xD;&amp;#34;stop&amp;#34;)&#xD;echo &amp;#34; =================== 关闭 hadoop集群 ===================&amp;#34;&#xD;​```&#xD;echo &amp;#34; --------------- 关闭 historyserver ---------------&amp;#34;&#xD;ssh hadoop102 &amp;#34;/opt/ha/hadoop-3.</description>
+    </item>
+    <item>
+      <title>编写zookeeper shell脚本</title>
+      <link>https://baidu.com/post/zookeeper%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/zookeeper%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</guid>
+      <description>编写zookeeper shell脚本 vim zk.sh #!/bin/bash case $1 in &amp;#34;start&amp;#34;){ for i in hadoop102 hadoop103 hadoop104 do echo &amp;#34;---------- zookeeper $i 启动 ------------&amp;#34; ssh $i &amp;#34;/opt/module/zookeeper-3.5.7/bin/zkServer.sh start&amp;#34; done };; &amp;#34;stop&amp;#34;){ for i in hadoop102 hadoop103 hadoop104 do echo &amp;#34;---------- zookeeper $i 停止 ------------&amp;#34; ssh $i &amp;#34;/opt/module/zookeeper-3.5.7/bin/zkServer.sh stop&amp;#34; done };; &amp;#34;status&amp;#34;){ for i in hadoop102 hadoop103 hadoop104 do echo &amp;#34;---------- zookeeper $i 状态 ------------&amp;#34; ssh $i &amp;#34;/opt/module/zookeeper-3.5.7/bin/zkServer.sh status&amp;#34; done };; esac 赋予执行权限 chmod +x zk.</description>
+    </item>
+    <item>
+      <title>KVM-Linux内核虚拟化技术</title>
+      <link>https://baidu.com/post/kvm/</link>
+      <pubDate>Wed, 02 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/kvm/</guid>
+      <description>虚拟化技术发展到今天已经非常成熟，再加上DPDK代码的开源化、KVM也好、其他Hypervisor也好，在转发性能的优化和硬件辅助虚拟化的支撑上都半斤八两，但由于KVM的开源性特性以及社区的热度，使得其在云计算领域解决方案一枝独秀。甚至，华为在其FusionSphere6.3版本也开始拥抱KVM而抛弃了Xen。要知道，华为在剑桥大学可是专门有一支团队在研究Xen虚拟化。&#xA;因为 KVM 是硬件辅助的虚拟化技术，主要负责 比较繁琐的 CPU 和内存虚拟化，而 Qemu 则负责 I/O 虚拟化，两者合作各自发挥自身的优势，相得益彰。&#xA;首先KVM（Kernel Virtual Machine）是Linux的一个内核驱动模块，它能够让Linux主机成为一个Hypervisor（虚拟机监控器）。在支持VMX（Virtual Machine Extension）功能的x86处理器中，Linux在原有的用户模式和内核模式中新增加了客户模式，并且客户模式也拥有自己的内核模式和用户模式，虚拟机就是运行在客户模式中。KVM模块的职责就是打开并初始化VMX功能，提供相应的接口以支持虚拟机的运行。&#xA;QEMU（quick emulator)本身并不包含或依赖KVM模块，而是一套由Fabrice Bellard编写的模拟计算机的自由软件。QEMU虚拟机是一个纯软件的实现，可以在没有KVM模块的情况下独立运行，但是性能比较低。QEMU有整套的虚拟机实现，包括处理器虚拟化、内存虚拟化以及I/O设备的虚拟化。QEMU是一个用户空间的进程，需要通过特定的接口才能调用到KVM模块提供的功能。从QEMU角度来看，虚拟机运行期间，QEMU通过KVM模块提供的系统调用接口进行内核设置，由KVM模块负责将虚拟机置于处理器的特殊模式运行。QEMU使用了KVM模块的虚拟化功能，为自己的虚拟机提供硬件虚拟化加速以提高虚拟机的性能。&#xA;KVM只模拟CPU和内存，因此一个客户机操作系统可以在宿主机上跑起来，但是你看不到它，无法和它沟通。于是，有人修改了QEMU代码，把他模拟CPU、内存的代码换成KVM，而网卡、显示器等留着，因此QEMU+KVM就成了一个完整的虚拟化平台。&#xA;KVM只是内核模块，用户并没法直接跟内核模块交互，需要借助用户空间的管理工具，而这个工具就是QEMU。KVM和QEMU相辅相成，QEMU通过KVM达到了硬件虚拟化的速度，而KVM则通过QEMU来模拟设备。对于KVM来说，其匹配的用户空间工具并不仅仅只有QEMU，还有其他的，比如RedHat开发的libvirt、virsh、virt-manager等，QEMU并不是KVM的唯一选择。&#xA;所以简单直接的理解就是：QEMU是个计算机模拟器，而KVM为计算机的模拟提供加速功能。&#xA;libvirt实际上是一个连接底层Hypervisor与上层应用的中间适配层。&#xA;Libvirt：Libvirt是一个开源的管理工具集和库，用于管理和监控虚拟化平台。它提供了一套统一的API和管理工具，用于管理不同的虚拟化技术，如KVM、QEMU、Xen、LXC等。Libvirt允许用户通过统一的接口来管理虚拟机、存储、网络等资源，并提供了多种编程语言的API供开发者使用。 Hypervisor：Hypervisor（也称为虚拟机监视器或虚拟机管理程序）是一种软件或硬件层，负责管理和运行虚拟机。Hypervisor直接与物理硬件交互，并将物理资源（如CPU、内存、存储）虚拟化为多个虚拟机，从而使每个虚拟机能够运行独立的操作系统和应用程序。常见的Hypervisor包括KVM、VMware ESXi、Hyper-V等 KVM虚拟机要使用快照功能，磁盘格式必须为qcow2&#xA;[root@localhost qemu]# virsh snapshot-create test01&#xD;//对虚拟机test01创建快照&#xD;[root@localhost qemu]# virsh snapshot-list test01&#xD;//查看快照信息&#xD;名称 生成时间 状态&#xD;------------------------------------------------------------&#xD;1560191837 2019-06-11 02:37:17 +0800 shutoff&#xD;[root@localhost qemu]# virsh snapshot-revert test01 1560191837&#xD;//恢复虚拟机状态至1560191837&#xD;[root@localhost qemu]# virsh snapshot-delete test01 1560191837&#xD;//删除快照&#xD;快照存放路径&#xD;/var/lib/libvert/qemu/snapshot/ </description>
+    </item>
+    <item>
+      <title>Docker安装</title>
+      <link>https://baidu.com/post/docker%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/docker%E5%AE%89%E8%A3%85/</guid>
+      <description>安装docker 安装docker依赖环境： yum install -y yum-utils device-mapper-persistent-data lvm2 配置国内docker-ce的yum源（这里采用的是阿里云） yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo yum-config-manager命令作用是添加yum源。 敲完命令之后执行以下命令去看一下有没有配置成功。 cd /etc/yum.repos.d ls 安装docker。 yum -y install docker-ce doker-ce-cli containerd.io 使用docker 启动服务。 systemctl start docker docker状态 systemctl status docker 停止服务 systemctl stop docker 镜像 docker pull centos&#xD;[下载最新的CentOS镜像] 查看镜像 docker images 创建并启动容器 docker run -dit --name server1(别名) 镜像名称 删除镜像 docker rmi 镜像id 停止docker systemctl stop docker 查看容器列表 docker ps -a 启动容器 sudo docker start 容器id&#xD;docker start ubuntu01 #通过名称启动容器 退出容器 exit&#xD;docker stop 容器id&#xD;ctrl + D 删除容器 ``</description>
+    </item>
+    <item>
+      <title>初始云计算</title>
+      <link>https://baidu.com/post/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AC%94%E8%AE%B0/</guid>
+      <description>实例&#xA;云是一种服务，可以像使用水、电、煤那样按需使用、灵活付费，使用者只需关注服务本身&#xA;按照服务划分，云计算可以分为IaaS、PaaS、SaaS、DaaS四个层次。 iaas层 ：计算 存储 网络 安全&#xA;IaaS（Infrastructure as a Service，基础架构即服务）是基础层：&#xA;在这一层，通过虚拟化、动态化将IT基础资源（计算、网络、存储）聚合形成资源池。 资源池即计算能力的集合， 终端用户（企业）可以通过网络获得自己需要的计算资源，运行自己的业务系统。 这种方式使用户不必自己建设这些基础设施， 而是通过付费即可使用这些资源。 paas层 ：数据库 中间件&#xA;saas层 ： 软件开发&#xA;对企业而言，可根据需要使用上述某一种层次的云服务。&#xA;常见的IaaS业务场景 测试与开发 团队可以快速设置和拆除测试和开发环境，从而更快地将新应用程序推向市场。IaaS可以快速经济地向上和向下扩展开发测试环境。&#xA;网站托管 使用IaaS运行网站可以比传统的网络托管更便宜。&#xA;存储、备份和恢复 避免了存储和复杂的存储管理的资本支出。存储管理通常需要有熟练的员工来管理数据，并满足法律和遵从性需求。IaaS对于处理不可预测的需求和稳定增长的存储需求非常有用。它还可以简化备份和恢复系统的规划和管理。&#xA;网络应用程序 IaaS提供了支持Web应用程序的所有基础结构，包括存储、Web和应用程序服务器以及网络资源。组织可以在IaaS上快速部署Web应用程序，并在无法预测应用程序需求时轻松地上下扩展基础架构。&#xA;高性能计算 超级计算机，计算机网格或计算机集群上的高性能计算（HPC）帮助解决涉及数百万个变量或计算的复杂问题。例如地震和蛋白质折叠模拟、气候和天气预报、财务建模以及评估产品设计。&#xA;大数据分析 大数据是一个流行术语，其中包含潜在有价值的模式【维基百科中对模式的解释是：把解决某类问题的方法总结归纳到理论高度，那就是模式（“模”一种标准，或者一种套路，“式”，就是方式，方法（/形式 ），这种形式不同于模型的文字、图表、公式这么具体，它更抽象，指一种能重复使用的、具有参考性的方法或知识体系。）】、趋势和关联。挖掘数据集以定位或梳理出这些隐藏的模式需要巨大的处理能力，而IaaS经济地提供了这种能力。&#xA;DaaS通过对数据资源的集中化管理，并把数据场景化，为企业自身和其他企业的数据共享提供了一种新的方式。 以前，企业的数据要么因为零散地存放在各个团队或部门而无法把数据资源作为一种企业内部的服务用于提升企业运行效率，要么就是每家企业都把数据当成自家金矿而不想拿出来分享给其他企业或个人，这样，即使数据是座金矿，也不会产生太大的价值，因为它不流通。只有将这座金矿拿出来变现，让其他企业也能使用数据资源，才能获取自己想要的物资，发挥金矿最大的价值。&#xA;在如今的数据大爆炸时代，没有任何一家企业能收集到自己需要的所有数据，有了DaaS服务，就可以向其他公司购买所需数据，通过分工协作提升企业竞争力。&#xA;“敏捷开发（Agile Development）”。 以OpenStack为代表的私有云开始出现 虚拟化技术并没有从本质上改变传统IT的使用方式，大家还是需要提前几个月做规划、进行软硬件采购，安装部署也需要几个月，能虚拟化的设备规模也比较小。随着公有云的出现，这种情况才有所改变。在公有云出现的第5年，以OpenStack为代表的私有云开始出现。&#xA;day02 OpenStack架构 是基于社区原生Openstack开发的商业版Openstack 向上提供北向接口 向下提供可接入KVM FusionComputer vmware等多种虚拟化平台 OpenStack九大组件 kcystonc&#xA;为openstack提供了一个鉴权的服务，当用户请求资源时，需要经过keystone进行权限鉴定，进而看用户是否有足够的资源或者权限来调度openstack nova&#xA;负责管理和调度整个openstack中的计算资源，可以兼容N多种虚拟化类型，比如：xen、kvm、vmrare、fusioncompute 等。为业务虚拟机等提供计算资源的调度和保障。 ncutron&#xA;负责管理整个openstack当中的网络资源，为发放出来的虛拟机实例提供网络。&#xA;里面有N多中类型的网络，可以满足不同用户的不同需求。同时可以作为SDN控制器，可以让本地的网络无缝迁移到SDN的场景中。&#xA;glance&#xA;管理openstack中的镜像，镜像的本质就是-一个VI模版，同事可以管理实例的快照等功能。为业务的发放提供了模版选择。 swift&#xA;是一款对象存储软件，可以将数据以对象的形式存放在swift当中。在华为的openstack中，swift是用来存储实例镜像的，暂时不对外开放对象存储功能。 hact&#xA;应用编排服务，主要负责在openstack进行业务发放的时候，完成自动化的部署与管理，可以减轻管理原的业务量，可以快速的业务弹性伸缩 ccilomcter :&#xA;云计量&amp;amp;云监控&amp;amp;计费。在私有云当中，ceilometer主要用来监控整个openstack的状态，以及对应具体的计算资源、存储资源、网络资源等。适时的上报告警，配合nova以及heat还可以实现VM的热迁移等动作。 ironic</description>
+    </item>
+    <item>
+      <title>认识数据</title>
+      <link>https://baidu.com/post/%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE/</guid>
+      <description>实例&#xA;mysql中行就是数据对象，列就是属性，&#xA;数据对象又称：样品，实例，示例，数据点，对象，元组&#xA;属性又称：变量，特征，字段，维度&#xA;分类的：标称 ，序数&#xA;数值的：区间，比率&#xA;属性的类型 标称类型（其取值没有一定的顺序或等级关系） 标称类型：类别（用于分类），状态 - 类别：（颜色）&#xA;- 状态：婚姻状况，职业，身份证号码（分类，每个人就是一类），邮政编码（分类）&#xD;二进制 - 对称二进制：例如性别 - 非对称二进制：医疗结果（正面反面） 序数类型（其取值具有一定的顺序或等级关系） 教育程度：例如，&amp;ldquo;小学&amp;rdquo;、&amp;ldquo;初中&amp;rdquo;、&amp;ldquo;高中&amp;rdquo;、&amp;ldquo;本科&amp;quot;和&amp;quot;研究生&amp;rdquo; 评级等级：例如，&amp;ldquo;优秀&amp;rdquo;、&amp;ldquo;良好&amp;rdquo;、&amp;ldquo;一般&amp;quot;和&amp;quot;差 情感评价：例如，&amp;ldquo;非常满意&amp;rdquo;、&amp;ldquo;满意&amp;rdquo;、&amp;ldquo;一般&amp;rdquo;、&amp;ldquo;不满意&amp;quot;和&amp;quot;非常不满意&amp;rdquo; 大 中 小 等级 军队排名 区间标度类型（数据值之间的差是有意义的，但比率没有意义） 如温度（华氏或摄氏），日历，年份 温度：摄氏度或华氏度是一种区间标度类型的属性。例如，20°C 和 30°C 的温差等于 10°C。 年份：公历年份也是区间标度类型的属性。例如，差距为 5 年的两个年份之间的差异是有意义的。 时间间隔：以小时、分钟、秒为单位的时间间隔也属于区间标度类型的属性。例如，一个事件持续了 3 小时和持续了 5 小时之间的差异是有意义的。 在统计分析和数据建模中，区间标度数据可以进行各种数值计算，如平均值、标准差和相关系数等。然而，需要注意的是，不应将区间标度数据视为具有比率特征，因为没有一个绝对的零点。&#xA;比率标度属性（数据值之间的差是有意义的，比率也是有意义） 如重量 年龄 质量 长度 电流 时间间隔 长度：以厘米或英寸表示的长度是比率标度类型的属性。例如，一段长度为10厘米的线段是长度为5厘米线段的两倍。 重量：以千克或磅表示的重量是比率标度类型的属性。例如，一个物体重量为20千克是一个重量为10千克物体重量的两倍。 时间间隔：以秒、分钟、小时表示的时间间隔也属于比率标度类型的属性。例如，一个事件持续了60秒和持续了30秒之间的差异是有意义的。 比率标度数据可以进行各种数学操作，如加减乘除、计算百分比和比率等。在统计分析和数据建模中，比率标度数据通常用于计算汇总统计量（如均值、标准差）和进行推断性统计分析</description>
+    </item>
+    <item>
+      <title>聚类分析（K-means）</title>
+      <link>https://baidu.com/post/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/</guid>
+      <description>聚类分析能干什么？&#xA;​ （1）可以作为其它算法的预处理步骤；&#xA;​ （）聚类分析是获得数据分布情况的有效方法&#xA;聚类分析的目标&#xA;聚类分析的目标就是形成的数据簇，且满足两个条件：&#xA;​ （1）一个簇内的数据尽量相似（high intra-class similarity）；&#xA;​ （2）不同簇的数据尽量不相似（low inter-class similarity）。&#xA;衡量一个聚类分析算法质量，依靠：&#xA;​ （1） 相似度测量机制是否合，是否能真的测出哪些数据相似，哪些数据不相似；&#xA;​ （）是否能发现数据背后潜在的、手工难以发现的类知识&#xA;聚类分析****有哪些方法？&#xA;**划分法（Partitioning Methods）：**基于一定标准构建数据的划分，k-means、k-modes、k-medoids、PAM、CLARA、CLARANS等。&#xA;层次法（Hierarchical Methods）：对给定数据对象集合进行层次的分解。&#xA;**密度法（density-based Methods）：**基于数据对象的相连密度评价。&#xA;网格法（Grid-based Methods）：将数据空间划分为有限个单元（Cell）的网格结构，基于网格结构进行聚类。&#xA;模型法（Model-Based Methods）：给每一个簇假定一个模型，然后去寻找能够很好的满足这个模型的数据集。&#xA;常用的相似性测量方法包括：&#xA;欧氏距离（Euclidean Distance）：计算样本间的欧氏距离作为相似性度量。对于多维数据，欧氏距离是最常见的相似性度量方法。 曼哈顿距离（Manhattan Distance）：也叫城市街区距离，计算样本间的曼哈顿距离作为相似性度量。对于特征间的绝对差异更加敏感。 余弦相似度（Cosine Similarity）：计算样本间的余弦相似度作为相似性度量。适用于文本和向量空间模型的聚类分析。 相关系数（Correlation Coefficient）：计算样本间的相关系数作为相似性度量。适用于线性相关关系的聚类分析。 Jaccard相似系数（Jaccard Similarity Coefficient）：计算样本间的Jaccard相似系数作为相似性度量。适用于集合的聚类分析。 </description>
+    </item>
+    <item>
+      <title>决策树</title>
+      <link>https://baidu.com/post/%E5%86%B3%E7%AD%96%E6%A0%91/</link>
+      <pubDate>Tue, 04 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%86%B3%E7%AD%96%E6%A0%91/</guid>
+      <description>实例&#xA;hunt 算法是许多决策树算法的基础，包括 ID3、C4.5、CART等。Hunt 算法通过递归方式建立决策树&#xA;决策树算法有多个变体和扩展，以下是其中一些常见的决策树算法：&#xA;ID3（Iterative Dichotomiser 3）：ID3是最早的决策树算法之一，它使用信息增益（Information Gain）作为特征选择准则。但ID3存在一个问题，就是对具有较多取值的特征有偏好。&#xA;信息增益准则对可取值数目较多的属性有所偏好，为减少这种偏好可能带来的不利影响，C4.5算法采用信息增益率来选择最优划分属性&#xD;选取信息增益大的属性作为分裂节点 C4.5：C4.5是ID3的改进版本，它使用信息增益比（Gain Ratio）作为特征选择准则，解决了ID3对具有较多取值的特征的偏好问题。此外，C4.5还能处理缺失值，并支持数值型特征的离散化。&#xA;C4.5算法选择具有最大信息增益比的特征作为当前节点的分裂准则 CART（Classification and Regression Trees）：CART是一种用于分类和回归的决策树算法。对于分类问题，CART使用基尼指数（Gini Index）作为特征选择准则；对于回归问题，CART使用平方误差最小化作为特征选择准则。 基尼指数衡量了数据集的不纯度或混乱程度。基尼指数越小，表示数据集的纯度越高，样本的类别分布越集中,&#xD;在CART算法中，我们希望选择基尼指数较小的特征作为分裂准则 RandomForest（随机森林）：随机森林是一种集成学习方法，它通过构建多个决策树来进行分类或回归。每个决策树由随机抽样得到的训练集构建，最后的预测结果由多个决策树的预测结果进行集成。 GBDT（Gradient Boosting Decision Tree）：GBDT是一种迭代的决策树算法，它通过逐步提升每棵树的拟合能力来提高整体模型的性能。在GBDT中，每棵树都试图纠正上一棵树的残差，从而逐步减小预测误差。 </description>
+    </item>
+    <item>
+      <title>关联规则挖掘</title>
+      <link>https://baidu.com/post/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99%E6%8C%96%E6%8E%98/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99%E6%8C%96%E6%8E%98/</guid>
+      <description>项集：{a,b,c,d}&#xA;支持数：包含特定项集的个数&#xA;支持度：支持数/总事务数（作用：确定项集的频繁程度）&#xA;置信度：条件概率（（作用：确定项集的频繁程度）&#xA;频繁项集：满足最小支持度阈值的所有项集&#xA;在频繁项集基础上通过支持度计算置信度得出规则&#xA;关联规则：&#xA;l关联规则是形如 X ® Y的蕴含表达式, 其中 X 和 Y 是不相交的项集&#xA;例子： {Milk, Diaper} {Beer}&#xA;关联规则的强度：&#xA;支持度 置信度 关联规则挖掘问题：&#xA;给定事务集合T，关联规则是指找出支持度和置信度大于等于阈值的所有规则&#xA;大多数关联规则算法的步骤：&#xA;产生频繁项集：满足最小支持度阈值的所有项集 产生规则：提取出高置信度的规则 关联规则的原始方法：（lBrute-force approach 暴力破解）&#xA;计算所有项集的支持度和置信度(这时还没有阈值这个参数) 关联规则原始方法的改进：&#xA;主要改进两点：&#xA;1.由于一些产生的项集经过比较后发现并不是频繁项集，为减少这些项集也就是候选项集（还未于事务集合T比较的项集）的产生，采用Apriori算法 Aproori算法(即设定阈值) Apriori算法是基于一种称为“先验原理”的思想，“先验原理”：&#xD;如果一个项集是频繁的(怎么知道是频繁还是不频繁：通过设置阈值)，则它的所有子集一定也是频繁的&#xD;相反，如果一个项集是非频繁的，则它的所有超集也一定是非频繁的&#xD;步骤如下：&#xD;设定最小支持度阈值（min_support）：用户需要指定一个最小支持度阈值，用于决定哪些项集被认为是频繁项集。&#xD;生成单个项集的候选项集：遍历数据集，统计每个项的支持度，并筛选出满足最小支持度阈值的项作为频繁1-项集。&#xD;迭代生成候选项集和频繁项集：从频繁1-项集开始，通过连接操作生成候选k-项集。然后，对候选k-项集进行剪枝操作，去掉不满足“先验原理”的项集，得到频繁k-项集。重复这个过程，直到无法生成更多的频繁项集为止。&#xD;生成关联规则：根据频繁项集，通过计算置信度来生成关联规则。对于每个频繁项集，产生所有可能的非空子集，并计算其置信度。满足最小置信度阈值的规则被认为是关联规则。&#xD;Apriori算法的优点是简单易懂，能够找到频繁项集和关联规则。然而，随着项集数量的增加，算法的时间和空间复杂度会呈指数级增长，因此在大数据集上可能效率较低。&#xD;为了改进Apriori算法的效率，可以采用一些优化技术，如剪枝策略（例如Apriori原理、集合压缩等）和使用FP树（一种紧凑的数据结构）来减少候选项集的生成和计数操作。这些优化方法可以在一定程度上提高算法的性能。 Apriori改进策略&#xA;事务压缩 不包含k项的事务，不可能包含任何K+1的项集，对这样的项，可以标记或删除 划分 选择 动态项集计数 2.在确定一个频繁项集，就需要于事务集合T做一次全比较，为减少比较的次数，采用FP树这种高级数据结构&#xA;构建FP树需要进行两次扫描数据库。&#xD;第一次扫描数据库用于统计每个项的频次，以确定满足最小支持度要求的项集。这一步骤的目的是筛选出频繁项集，即在数据集中出现次数超过最小支持度阈值的项集。通过第一次扫描，可以得到频繁一项集（每个项作为一个集合），然后根据频次降序排序项。&#xD;第二次扫描数据库用于构建FP树。根据第一次扫描得到的频繁一项集和排序后的项，再次遍历数据集，按照项的频次顺序逐个加入FP树中。&#xD;因此，在构建FP树的整个过程中，需要进行两次对数据集的扫描&#xD;FP树（Frequent Pattern Tree）是一种用于高效挖掘频繁项集的数据结构。它是在关联规则挖掘中使用的一种优化技术，可以减少候选项集的生成和计数操作，从而提高算法的效率。&#xD;FP树的构建过程如下：&#xD;遍历数据集，统计每个项的支持度，并按照支持度降序排序。&#xD;对于每个事务（transaction），根据支持度排序后的项集顺序，构建一棵树。根节点为空节点，每个项作为树的一个分支。如果分支已经存在，则增加该分支的支持度；否则，在分支处创建新的节点。&#xD;使用相同的排序顺序，依次处理每个事务。对于每个事务中的项集，从根节点开始，沿着树的分支进行遍历并更新支持度。&#xD;根据最小支持度阈值，对树进行剪枝。去掉不满足最小支持度要求的分支和叶子节点。&#xD;构建条件模式基（conditional pattern base）：对于每个频繁项，找到与之关联的所有前缀路径（prefix path）。每个前缀路径都表示以该频繁项结尾的条件模式基。&#xD;递归地应用上述步骤，利用条件模式基构建同样的FP树。重复这个过程，直到无法生成更多的频繁项集为止。&#xD;通过使用FP树，可以减少在关联规则挖掘中频繁项集的生成和计数操作。FP树将事务中相同的项合并在一起，形成更紧凑的数据结构，避免了大量的扫描和计数操作，提高了算法的效率。&#xD;在FP树的基础上，可以进一步应用关联规则挖掘方法，生成关联规则并发现频繁项集之间的关联关系。 规则支持度：买面包的人一定会买牛奶吗？</description>
+    </item>
+    <item>
+      <title>数据预处理</title>
+      <link>https://baidu.com/post/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</guid>
+      <description>数据清洗：缺失值处理，平滑噪声数据，识别或删除离群值（盒状图）&#xA;数据集成：&#xA;模式集成&#xA;实体识别&#xA;数据冲突检测和解决&#xA;•对于同一个真实世界的实体，来自不同源的属性值&#xA;•可能的原因：不同的表述，不同的尺度，例如，公制与英制单位&#xA;数据集成是将多个来源的数据合并为一个一致和综合的数据集的过程。数据集成方法旨在解决不同数据源、不同格式和结构的数据之间的一致性和完整性问题 l整合多个数据库经常发生数据冗余 l通过相关性分析和协方差分析可以检测到冗余的属性 可通过检测属性是否相关 卡方检验 皮尔逊相关系数 协方差 数据规约：指的是通过某种方式减少数据量的过程&#xA;-数据规约的三种方法：&#xA;降维&#xA;降数据&#xA;数据压缩&#xA;​&#x9;以下是一些常见的降维方法：&#xA;主成分分析（PCA）：PCA是一种无监督的线性降维方法，通过线性变换将原始数据投影到新的坐标轴上，使得投影后的数据具有最大的方差。同时，可以选择保留最重要的主成分（维度），以达到降维的目的。&#xA;PCA算法两种实现方法&#xA;基于特征值分解协方差矩阵实现PCA算法&#xA;基于SVD分解协方差矩阵实现PCA算法&#xA;线性判别分析（LDA）：LDA是一种有监督的线性降维方法，类似于PCA，但在进行投影时，考虑了类别信息，目标是最大化类别间的距离同时最小化类别内的距离。&#xA;特征选择（Feature Selection）：特征选择是一种通过选择最相关的特征来进行降维的方法。可以通过统计方法（如方差选择、相关性分析）、模型相关方法（如基于模型的特征选择）或基于递归的方法（如递归特征消除）等来选择最相关的特征。&#xA;数据规范化·</description>
+    </item>
+    <item>
+      <title>自然语言处理</title>
+      <link>https://baidu.com/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</link>
+      <pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</guid>
+      <description>实例&#xA;常用的文本向量化表示方法： 离散化表示方法 分布式表示方法 离散化表示方法（词袋模型）： One-hot独热编码&#xA;TF-IDF&#xA;N-gram模型&#xA;分布式表示方法： word2vec模型 还包括后来的Glove、 ELMO、 GPT 和最近很火的BERT。 离散化表示方法的问题： 无法衡量词向量之间的关系 词的维度随着语料库的增长膨胀 n-gram词序列随着预料库膨胀更快 word2vec # 打开文本文件，读取语料库&#xD;corpus_story = open(&amp;#34;result.txt&amp;#34;, &amp;#34;r&amp;#34;, encoding=&amp;#34;utf-8&amp;#34;)&#xD;# 训练Word2Vec模型，使用Skip-gram算法，向量维度为280，窗口大小为8，最小词频为2，使用12个线程&#xD;model = Word2Vec(LineSentence(corpus_story), sg=0, vector_size=280, window=8, min_count=2, workers=12)&#xD;# 保存模型&#xD;model.save(&amp;#39;in_the_name_of_people.word2vec&amp;#39;)&#xD;# 加载模型&#xD;model = Word2Vec.load(&amp;#39;in_the_name_of_people.word2vec&amp;#39;) </description>
+    </item>
+    <item>
+      <title>python面试八股文</title>
+      <link>https://baidu.com/post/python/</link>
+      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/python/</guid>
+      <description>提高python运行效率的方法： 使用生成器，可以节约大量内存 优化循环代码，避免过多重复代码的执行 协程可以解决IO阻塞等待问题 使用多进程 多用字典，python内核也大量使用字典，对字典的性能是很快的，有避免了大量循环 使用pypy即时编译执行 写c接口嵌入python底层 多线程不能从根本解决性能问题，协程可以解决IO阻塞等待的问题，多进程也是不错的解决方案。在这基础上可以多用生成器，解决内存问题。多数性能瓶颈是数据库，不要在循环调用数据库，一些简单的查询可以直接在数据上优化。比如利用索引，递推索引，等等。进程上可以异步， python递归的最大深度 理论上是1000，根据电脑性能一般只能在995到998之间 python2与python3 的区别 字符集不同，在2中需要提前转化，3中统一为utf-8 python中字母转化json字符串 使用json.dumps() GIL多线程GIL，数据库mongodb tornad django flask range(100)在2与3中的区别 2中返回的是列表 3中返回的是迭代器 Six是兼容2和3的 耦合度 耦合性（英语：Coupling，dependency，或称耦合力或耦合度）是一种软件度量，是指一程序中，模块及模块之间信息或参数依赖的程度。 模块__name__属性 例如 Python 文件 a 直接运行时， Python 文件 a 的内建变量 _name_ = ‘_main_’ ，当 Python 文件 a 被另一个 Python 文件 b 调用运行时， 在两者组成的程序中 Python 文件 a 中内建变量 _name_ = ‘a’ ，Python 文件 b 的内建变量 _name_ = ‘_main_’ ，因此当我们写代码时通常用 if _name_ = ‘_main_’: 作为程序入口 </description>
+    </item>
+    <item>
+      <title>在linux服务器上部署爬虫</title>
+      <link>https://baidu.com/post/%E5%9C%A8linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%9C%A8linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E7%88%AC%E8%99%AB/</guid>
+      <description>实例&#xA;设置定时任务&#xA;为了定期更新数据，可以通过设置 cron 定时任务来定期运行爬虫程序。在终端中使用以下命令打开 crontab 编辑器：&#xA;crontab -e 然后添加需要执行的命令和计划执行时间即可，例如：&#xA;0 0 * * * cd /path/to/spider &amp;amp;&amp;amp; scrapy crawl myspider &amp;gt;&amp;gt; spider.log 2&amp;gt;&amp;amp;1 该命令将于每天的午夜零点运行，记录爬取详情到名为“spider.log”的日志文件中。&#xA;监控爬虫状态&#xA;可以使用一些监控工具来监控爬虫的状态，比如Supervisor、Systemd等。&#xA;做爬虫怎么选择Linux系统&#xA;选择Linux系统做爬虫有以下几个原因：&#xA;1、稳定性&#xA;Linux系统相对于Windows系统更加稳定，不易崩溃，可以长时间运行爬虫程序。&#xA;2、安全性&#xA;Linux系统相对于Windows系统更加安全，不易受到病毒、恶意软件等攻击，保障爬虫程序的安全性。&#xA;3、开源性&#xA;Linux系统是开源的，可以自由地修改和定制系统，适合开发者进行二次开发。&#xA;4、命令行操作&#xA;Linux系统采用命令行操作，可以更加高效地进行操作和管理，适合爬虫程序的开发和运行。&#xA;5、资源占用&#xA;Linux系统相对于Windows系统资源占用更少，可以更加高效地利用计算机资源，提高爬虫程序的效率。&#xA;总之，选择Linux系统做爬虫可以提高程序的稳定性、安全性和效率，适合开发者进行二次开发和定制。&#xA;【HAVING 与 WHERE 的区别】：&#xA;WHERE 子句的作用：在对查询结果进行分组前，把不符合 WHERE 条件的行去掉，即在分组之前过滤数据。另外，WHERE 条件中不能包含聚组函数。 HAVING 子句的作用：筛选满足条件的组，即在分组后过滤数据，条件中经常包含聚组函数，使用 HAVING 条件过滤出特定的组。</description>
+    </item>
+    <item>
+      <title>数据结构</title>
+      <link>https://baidu.com/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>实例&#xA;线性表： 特点:&#xA;数据类型要相同&#xA;有限序列&#xA;第一个元素只有后继&#xA;最后一个元素只有前趋&#xA;有且仅有一个前趋和后继&#xA;在复杂的线性表中，一个线性表的数据元素由多个数据项构成&#xA;操作：&#xA;线性表重置空表操作&#xA;通过索引快速获取元素&#xA;可判断元素是否在线性表中&#xA;线性表长度大小&#xA;插入和删除</description>
+    </item>
+    <item>
+      <title>名字绑定</title>
+      <link>https://baidu.com/post/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BBpython/</link>
+      <pubDate>Wed, 31 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BBpython/</guid>
+      <description>int数据类型内存池 整型作为最常用的,频繁参与计算的数据类型，在python3.5中解释器会自动在内存中创建-5-3000之间的&#xA;bool型继承了int型，他是int的子类。&#xA;Python2中有长整型long，数值范围更大，在python3中已取消，所有整型统一由int表示&#xA;python整数和浮点型支持常规的数值运算 整数和浮点数都可参与的运算：+ - * / %（取余） //（整除） **（幂） Python 数据类型 1. 数字 Number&#xD;2. 字符串 String 3. 列表 List 4. 元组 Tuple 5. 字典 Dict 6. 集合 Set 其中 数字 Number 和 字符串 String 是基本的数据类型&#xD;其中 数字 Number 和 字符串 String 与 元组 Tuple 是不可变数据类型&#xD;其中 列表 List 和 字典 Dictionary 与 集合 Set 是可变数据类型&#xD;其中 字符串 String 和 列表 List 与 元组 Tuple 是可偏移量索引数据类型&#xD;其中 字典 Dictionary 是可键值索引数据类型&#xD;其中 集合 Set 是不可索引数据类型 Python 中有三类主要的数据结构 1，序列 字符串 String 列表 List 元组 Tuple 2，散列 字典 Dict 3，集合 集合 Set # 二进制&#xD;var = bin(22)&#xD;# Out: &amp;#39;0b10110&amp;#39;&#xD;# 八进制&#xD;var = oct(22)&#xD;# Out: &amp;#39;0o26&amp;#39;&#xD;# 十六进制&#xD;var = hex(22)&#xD;# Out: &amp;#39;0x16&amp;#39;&#xD;var = complex(2, 2)&#xD;# Out: 2 + 2j 字符串 &amp;#39;&amp;#39;&amp;#39;&#xD;# 默认转义&#xD;\\ 反斜杠符号(\)&#xD;\&amp;#39; 单引号&#xD;\&amp;#34; 双引号&#xD;# ASCII码特殊字符&#xD;\a 响铃&#xD;\b 退格(backspace)&#xD;\n 换行&#xD;\v 纵向制表符&#xD;\t 横向制表符&#xD;\r 回车&#xD;\f 换页&#xD;&amp;#39;&amp;#39;&amp;#39; 方法</description>
+    </item>
+    <item>
+      <title>网工做题笔记</title>
+      <link>https://baidu.com/post/%E7%BD%91%E5%B7%A5%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 13 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E7%BD%91%E5%B7%A5%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/</guid>
+      <description>day01 十进制：127&#xA;二进制：0111，1111&#xA;十进制：128&#xA;二进制：1000，0000&#xA;十进制：191&#xA;二进制：1011，1111&#xA;十进制：192&#xA;二进制：1100，0000&#xA;十级制：223&#xA;二级制：1101，1111&#xA;十进制：224&#xA;二进制：1110，0000&#xA;十进制：240&#xA;二进制：1111，0000&#xA;十进制：248&#xA;二进制：1111，1000&#xA;十进制：252&#xA;二进制：1111，1100&#xA;十进制：254&#xA;二进制：1111，1110&#xA;十进制：255&#xA;二进制：1111，1111&#xA;A类地址 网络号全为0，广播地址全为1&#xA;0.0.0.0：表示所有网络&#xA;a类地址（第一位是0）：1.0.0.0~127.255.255.254&#xA;10.X.X.X是私有地址，（所谓私有地址即不能应用在互联网上，而被用在局域网络中的地址。）范围：10.0.0.0~10.255.255.255&#xA;127.X.X.X是保留地址，做循环测试使用。&#xA;B类地址 b类地址（10）：128.0.0.0~191.255.255.254&#xA;172.16.0.0~172.31.255.255是私有地址。&#xA;169.254.X.X是保留地址。如果你的IP地址是自动获取IP地址，而你在网络上有没有找到可用的DHCP服务器，就会得到其中一个IP地址。&#xA;C类地址 c类地址(110)：192.0.0.0~223.255.255.254 192.168.X.X是私有地址，其范围：192.168.0.0~192.168.255.255 D类地址 组播地址：224.0.0.0~239.255.255.255&#xA;224.0.0.1：表示所有主机地址(包括所有路由器地址)&#xA;225.0.0.5：表示所有OSPF路由器地址&#xA;224.0.0.0~224.0.0.255：归路由协议使用&#xA;224.0.1.0~224.0.1.255：表示公网组播地址&#xA;用户可用的组播地址：224.0.2.0~238.255.255.255&#xA;本地管理组地址：239.0.0.0~239.255.255.255&#xA;day02 掉电后信息不会丢失，属于非易失性存储器 如只读存储器（ROM:内容在写入后无法修改）、快闪存储器（Flash Memory：可修改）和硬盘等 易失性存储器 存储器（RAM）和部分缓存存储器 例1：将0.125换算为二进制&#xD;得出结果：将0.125换算为二进制（0.001）2&#xD;分析：第一步，将0.125乘以2，得0.25,则整数部分为0,小数部分为0.25;&#xD;第二步, 将小数部分0.25乘以2,得0.5,则整数部分为0,小数部分为0.5;&#xD;第三步, 将小数部分0.5乘以2,得1.0,则整数部分为1,小数部分为0.0;&#xD;第四步,读数,从第一位读起,读到最后一位,即为0.001。 -多模光纤中，由于光线在纤芯内随意反射和折射，因此会发生色散现象，导致信号失真。为了解决这个问题，在长距离高速数据传输中，一般采用单模光纤来传输信号，该纤芯直径非常小，只能容纳一个光波模式，避免了信号失真的问题。&#xA;在计算机中，数字信号可以使用多种编码方式进行传输。其中，常用的一种是将数字信号转换为基带信号进行传输，即baseband传输（也称为基带传输）。&#xD;在base传输中，数字信号被编码成连续的电压或电流的序列，通过传输介质（如电缆、光纤等）进行传输。这些电压或电流的序列通常被称为比特流（bit stream），由多个二进制位组成，每个二进制位表示一个0或1。&#xD;常见的数字信号编码方式包括：&#xD;非归零编码（NRZ）：将二进制位0编码成低电平，将1编码成高电平。&#xD;曼彻斯特编码（Manchester）：将每个二进制位分成两个时隙，在每个时隙中分别使用不同电平表示0和1。&#xD;差分曼彻斯特编码（Differential Manchester）：类似于曼彻斯特编码，但是在每个时隙的开始时改变电平，从而使数据更容易同步。&#xD;需要注意的是，base传输方式通常只适用于短距离通信，因为一旦信号传输过程中受到干扰或信号衰减，会导致比特误码率增加，从而影响通信质量。在长距离通信中，常用的数字信号传输方式是频带传输（bandpass transmission），它需要将数字信号通过调制方式转换成模拟信号，再使用模拟信号进行传输。 解析：4B/5B编码是百兆以太网（即快速以太网）中线路层编码类型之一，就是用5bit的二进制数来表示4bit二进制数。为什么需要4B/5B编码？因为接受端要和发送端保持同步，需要电平的跳变，不能长时间保持一个电平？那可以选择（差分）曼彻斯特编码吗？可以从第12题的图中看出，编码效率只有50%，因此（差分）曼彻斯特编码常用十兆以太网，4B/5B编码用于百兆以太网，编码效率4/5=80%；8B/10B编码用于千兆以太网；万兆以太网用的是64B/66B编码；发现规律了吗?传输的速率越高，需要的效率也就越高。这题不应该错。&#xD;再说说NRZ-I，但得先说NRZ&#xD;NRZ代表的是不归零码，图见第13题，遇到1时电平翻转，遇到0时电平不翻转&#xD;NRZ-I后面多了个I，是单词invers的首字母，遇到0时电平翻转，遇1时电平不翻转 解析：4B/5B编码是百兆以太网（即快速以太网）中线路层编码类型之一，就是用5bit的二进制数来表示4bit二进制数。为什么需要4B/5B编码？因为接受端要和发送端保持同步，需要电平的跳变，不能长时间保持一个电平？那可以选择（差分）曼彻斯特编码吗？可以从第12题的图中看出，编码效率只有50%，因此（差分）曼彻斯特编码常用十兆以太网，4B/5B编码用于百兆以太网，编码效率4/5=80%；8B/10B编码用于千兆以太网；万兆以太网用的是64B/66B编码；发现规律了吗?</description>
+    </item>
+    <item>
+      <title>随机森林项目笔记</title>
+      <link>https://baidu.com/post/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/</guid>
+      <description>#将columns的索引转化为小写&#xD;data_train.columns.str.lower() pandas中fillna()方法，能够使用指定的方法填充NA/NaN值。&#xA;#忽略警告信息&#xD;import warnings&#xD;warnings.filterwarnings(&amp;#34;ignore&amp;#34;) pandas中apply函数&#xA;import numpy as np&#xD;import pandas as pd&#xD;f = lambda x: x.max()-x.min()&#xD;df = pd.DataFrame(np.random.randn(4,3),columns=list(&amp;#39;bde&amp;#39;),index=[&amp;#39;utah&amp;#39;, &amp;#39;ohio&amp;#39;, &amp;#39;texas&amp;#39;, &amp;#39;oregon&amp;#39;])&#xD;print(df)&#xD;t1 = df.apply(f)&#xD;print(t1)&#xD;t2 = df.apply(f, axis=1)&#xD;print(t2) 输出结果：&#xA;b d e&#xD;utah 1.106486 0.101113 -0.494279&#xD;ohio 0.955676 -1.889499 0.522151&#xD;texas 1.891144 -0.670588 0.106530&#xD;oregon -0.062372 0.991231 0.294464&#xD;b 1.953516&#xD;d 2.880730&#xD;e 1.016430&#xD;dtype: float64&#xD;utah 1.600766&#xD;ohio 2.845175&#xD;texas 2.</description>
+    </item>
+    <item>
+      <title>决策树信息增益</title>
+      <link>https://baidu.com/post/%E5%86%B3%E7%AD%96%E6%A0%91%E4%BF%A1%E6%81%AF%E5%A2%9E%E7%9B%8A/</link>
+      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%86%B3%E7%AD%96%E6%A0%91%E4%BF%A1%E6%81%AF%E5%A2%9E%E7%9B%8A/</guid>
+      <description>在决策树算法中，我们的关键就是每次选择一个特征，特征有多个，那么到底按照什么标准来选择哪一个特征。&#xA;这个问题就可以用信息增益来度量。如果选择一个特征后，信息增益最大（信息不确定性减少的程度最大），那么我们就选取这个特征。&#xA;在决策树算法的学习过程中，信息增益是特征选择的一个重要指标，它定义为一个特征能够为分类系统带来多少信息，带来的信息越多，说明该特征越重要，相应的信息增益也就越大。</description>
+    </item>
+    <item>
+      <title>可视化图及相关作用</title>
+      <link>https://baidu.com/post/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9B%BE%E5%8F%8A%E7%9B%B8%E5%85%B3%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9B%BE%E5%8F%8A%E7%9B%B8%E5%85%B3%E4%BD%9C%E7%94%A8/</guid>
+      <description>1.关系图：用来了解数据集中变量间的相互关联，探查一个变量与另一个或几个变量的相关关系。包括scatterplot、lineplot、relplot&#xA;2.分类图：&#xA;​&#x9;- 2.1 分类散点图：将分类变量的每个级别的每个观察结果显示出来。包括swarmplot、stripplot&#xA;​&#x9;- 2.2 分类分布图：显示每个观察分布的抽象表示。包括violinplot、boxenplot&#xA;​&#x9;- 2.3 分类估计图：显示权重趋势和置信区间。包括pointplot、countplot&#xA;3.分布图：观察数据的分布情况。包括kdeplot、rugplot、displot&#xA;4.回归图：表现两个变量之间的线性关系。包括regplot、lmplot&#xA;5.矩阵图：热力图：以颜色明亮程度来显示数据的密集程度。heatmap</description>
+    </item>
+    <item>
+      <title>linux 简单实用的操作</title>
+      <link>https://baidu.com/post/linux-%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/linux-%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+      <description>实例&#xA;设置字体大小&#xA;②进入到所有字体的目录&#xD;命令：cd /lib/kbd/consolefonts&#xD;setfont LatGrkCyr-12x22.psfu.gz&#xD;网卡配置&#xD;/etc/sysconfig/network-scripts/ifcfg-en crontab -e&#xD;crontab -l&#xD;crontab -r at 5pm + 5days&#xD;\\ctrl + d 两次结束&#xD;at&amp;gt; /bin/ls /home at now + 2 minutes&#xD;at rm 1 [root@localhost var]# lsblk&#xD;NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT&#xD;sda 8:0 0 50G 0 disk&#xD;├─sda1 8:1 0 1G 0 part /boot&#xD;└─sda2 8:2 0 49G 0 part&#xD;├─centos-root 253:0 0 44G 0 lvm /&#xD;└─centos-swap 253:1 0 5G 0 lvm [SWAP]&#xD;sr0 11:0 1 9.</description>
+    </item>
+    <item>
+      <title>Python内置函数</title>
+      <link>https://baidu.com/post/python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
+      <description>实例&#xA;enumerate(sequence, [start=0]) L = [&amp;#39;Spring&amp;#39;, &amp;#39;Summer&amp;#39;, &amp;#39;Fall&amp;#39;, &amp;#39;Winter&amp;#39;]&#xD;enumerate(L)&#xD;&amp;lt;enumerate at 0x226e1ee1138&amp;gt;#生成的额迭代器，无法直接查看&#xD;list(enumerate(L))#列表形式，可以看到内部结构，默认下标从0开始&#xD;[(0, &amp;#39;Spring&amp;#39;), (1, &amp;#39;Summer&amp;#39;), (2, &amp;#39;Fall&amp;#39;), (3, &amp;#39;Winter&amp;#39;)]&#xD;list(enumerate(L, start=1)) #下标从 1 开始&#xD;[(1, &amp;#39;Spring&amp;#39;), (2, &amp;#39;Summer&amp;#39;), (3, &amp;#39;Fall&amp;#39;), (4, &amp;#39;Winter&amp;#39;)]&#xD;for i,v in enumerate(L):&#xD;print(i,v)&#xD;0 Spring&#xD;1 Summer&#xD;2 Fall&#xD;3 Winter&#xD;for i,v in enumerate(L,1):&#xD;print(i,v)&#xD;1 Spring&#xD;2 Summer&#xD;3 Fall&#xD;4 Winter&#xD;s = [&amp;#34;a&amp;#34;,&amp;#34;b&amp;#34;,&amp;#34;c&amp;#34;]&#xD;for i ,v in enumerate(s,2):&#xD;print(i,v)&#xD;2 a&#xD;3 b&#xD;4 c&#xD;普通的 for 循环&#xD;i = 0&#xD;seq = [&amp;#39;one&amp;#39;, &amp;#39;two&amp;#39;, &amp;#39;three&amp;#39;]&#xD;for element in seq:&#xD;print (i, seq[i])&#xD;i+= 1&#xD;0 one&#xD;1 two&#xD;2 three&#xD;在看一个普通循环的对比案例 for 循环使用 enumerate&#xD;seq = [&amp;#39;one&amp;#39;, &amp;#39;two&amp;#39;, &amp;#39;three&amp;#39;]&#xD;for i, element in enumerate(seq):&#xD;print (i, element)&#xD;0 one&#xD;1 two&#xD;2 three&#xD;seq = [&amp;#39;one&amp;#39;, &amp;#39;two&amp;#39;, &amp;#39;three&amp;#39;]&#xD;for i, element in enumerate(seq,2):&#xD;print (i, element)&#xD;2 one&#xD;3 two&#xD;4 three filter(function, iterable) 参数：&#xD;function -- 判断函数。&#xD;iterable -- 可迭代对象。&#xD;fil = filter(lambda x: x&amp;gt;10,[1,11,2,45,7,6,13])&#xD;fil&#xD;&amp;lt;filter at 0x28b693b28c8&amp;gt;&#xD;list(fil)&#xD;[11, 45, 13]&#xD;def is_odd(n):&#xD;return n % 2 == 1&#xD;newlist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])&#xD;print(list(newlist))&#xD;[1, 3, 5, 7, 9] eval() **描述：**将字符串str 当成有效的表达式来求值并返回计算结果取出字符串中内容</description>
+    </item>
+    <item>
+      <title>python线程</title>
+      <link>https://baidu.com/post/python%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/python%E7%BA%BF%E7%A8%8B/</guid>
+      <description>以下是对发现的几种多线程进行的汇总整理，均已测试运行 多线程实现的四种方式分别是： multiprocessing下面有两种：&#xA;from multiprocessing.dummy import Pool as ThreadPool # 线程池&#xD;from multiprocessing.pool import ThreadPool # 线程池，用法无区别，唯一区别这个是线程池 另外两种：&#xA;from concurrent.futures import ThreadPoolExecutor # python原生线程池，这个更主流&#xD;import threadpool # 线程池，需要 pip install threadpool，很早之前的 </description>
+    </item>
+    <item>
+      <title>python读取各格式文件</title>
+      <link>https://baidu.com/post/%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E8%AF%BB%E5%8F%96/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E8%AF%BB%E5%8F%96/</guid>
+      <description>实例&#xA;Json import json&#xD;# 创建一个字典对象&#xD;data = {&amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;city&amp;#34;: &amp;#34;New York&amp;#34;}&#xD;# 将字典对象序列化为JSON格式的字符串&#xD;json_str = json.dumps(data)&#xD;# 将JSON格式的字符串写入文件中&#xD;with open(&amp;#39;data.json&amp;#39;, &amp;#39;w&amp;#39;) as f:&#xD;f.write(json_str) import json&#xD;# 从文件中读取 JSON 数据&#xD;with open(&amp;#39;data.json&amp;#39;, &amp;#39;r&amp;#39;) as f:&#xD;data = json.load(f)&#xD;# 或者从字符串中读取 JSON 数据&#xD;json_str = &amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;city&amp;#34;: &amp;#34;New York&amp;#34;}&amp;#39;&#xD;data = json.loads(json_str) csv import csv&#xD;# 写入 CSV 文件&#xD;with open(&amp;#39;data.csv&amp;#39;, &amp;#39;w&amp;#39;, newline=&amp;#39;&amp;#39;) as f:&#xD;writer = csv.</description>
+    </item>
+    <item>
+      <title>名字空间</title>
+      <link>https://baidu.com/post/%E5%90%8D%E5%AD%97%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%90%8D%E5%AD%97%E7%A9%BA%E9%97%B4/</guid>
+      <description>与 作用域 相对应， Python 在运行时借助 dict 对象保存作用域中的名字，构成动态的 名字空间 。这样的名字空间总共有 4 个：&#xA;内建名字空间 全局名字空间 闭包名字空间 局部名字空间 Python 语句在查找名字时，按照 Local Enclosing Global Builtin 这样的顺序在 4 个名字空间中查找，这也就是所谓的 LEGB 规则。&#xA;名字空间 作用域 是语法层面的概念，是静态的。当程序开始执行后，作用域中的名字绑定关系需要存储在某个地方，这个地方就是 名字空间 。由于名字绑定关系是有 名字 和 对象 组成的键值对，因而 dict 对象是理想的存储容器。&#xA;Globals 在 Python 中，每个 模块 背后都有一个 dict 对象，用于存储 全局作用域 中的名字，这就是 全局名字空间 ( Globals )。&#xA;模块的 属性空间 以及 全局名字空间 是同一个东西，都藏身于同一个 dict 对象。 Locals Python 执行一个作用域内的代码时，需要一个容器来存储当前作用域内的名字，这就是 局部名字空间 ( Locals )。&#xA;代码语句中涉及的名字查找，均在这个两个名字空间中进行：先查找局部名字空间，再查找全局名字空间。&#xA;Enclosings 在作用域存在嵌套的情况下， Python 将内层代码块中依赖的所有外层名字存储在一个容器内，这就是 闭包名字空间 ( Enclosings )。</description>
+    </item>
+    <item>
+      <title>名字绑定</title>
+      <link>https://baidu.com/post/%E5%90%8D%E5%AD%97%E7%BB%91%E5%AE%9A/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%90%8D%E5%AD%97%E7%BB%91%E5%AE%9A/</guid>
+      <description>名字绑定 赋值 在 Python 中，变量只是一个与实际对象绑定起来的名字，变量定义本质上就是建立名字与对象的约束关系。因此，赋值语句本质上就是建立这样的约束关系，将右边的对象与左边的名字绑定在一起：&#xA;模块导入 我们导入模块时，也会在当前上下文创建一个名字，并与被导入对象绑定：&#xA;import xxx&#xD;from xxx import yyy 函数、类定义 我们定义函数 / 类时，本质上是创建了一个函数 / 类对象，然后将其与函数 / 类名绑定：&#xA;as 关键字 除此此外， as 关键字也可以在当前上下文建立名字约束关系：&#xA;以上这几类语句均可在当前上下文建立名字约束，有着与赋值语句类似的行为，因此可以看作是 广义的赋值语句 。</description>
+    </item>
+    <item>
+      <title>引用计数的缺陷与解决办法</title>
+      <link>https://baidu.com/post/%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%9A%84%E7%BC%BA%E9%99%B7%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%9A%84%E7%BC%BA%E9%99%B7%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>Python 内部采用 引用计数法 ，为每个对象维护引用次数，并据此回收不再需要的垃圾对象。由于引用计数法存在重大缺陷，循环引用时有内存泄露风险，因此 Python 还采用 标记清除法 来回收存在循环引用的垃圾对象。此外，为了提高垃圾回收( GC )效率，Python 还引入了 分代回收机制 。&#xA;由于内部循环引用的存在，就算我们将外部变量删除，对象的引用计数也不为零，无法回收：&#xA;这个问题可就严重了，该回收的对象无法回收，不就内存泄露了吗？&#xA;那么，如何解决循环引用带来的问题呢？解决问题的思路主要有两个：&#xA;精心设计程序，确保对象不会形成环状引用关系(被动避免)； 实现算法定期检查识别需要回收的垃圾对象，进而将它们回收(主动回收)； Python 先通过一个算法找出根对象，然后再从根对象出发遍历可达的活跃对象。&#xA;第一步需要找出 根对象 ( root object )集合。所谓根对象，就是指被全局引用或者在栈中引用的对象，这部对象是不能被删除的。因此，我们将这部分对象标记为绿色，作为活跃对象遍历的起点。&#xA;这样一来，当我们遍历完所有根对象，活跃对象也就全部找出来了：&#xA;根对象本身是 可达的 ( reachable )，不能删除；被根对象引用的对象也是可达的，同样不能删除；以此类推。我们从一个根对象出发，沿着引用关系遍历，遍历到的所有对象都是可达的，不能删除。&#xA;而没有被标色的对象就是 不可达 ( unreachable )的垃圾对象，可以被安全回收。循环引用的致命缺陷完美解决了！&#xA;_PyObject_GC_Alloc 自增 count 后如果超过阀值( 700 )，将调用 collect_generations 执行一次垃圾回收( GC )。&#xA;每新增 701 个需要 GC 的对象，触发一次新生代 GC ； 每执行 11 次新生代 GC ，触发一次中生代 GC ； 每执行 11 次中生代 GC ，触发一次老生代 GC (老生代 GC 还受其他策略影响，频率更低)； 执行某个生代 GC 前，年轻生代对象链表也移入该代，一起 GC ； 一个对象创建后，随着时间推移将被逐步移入老生代，回收频率逐渐降低； </description>
+    </item>
+    <item>
+      <title>numpy  pandas读取文件</title>
+      <link>https://baidu.com/post/numpy-pandas%E8%AF%BB%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 26 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/numpy-pandas%E8%AF%BB%E6%96%87%E4%BB%B6/</guid>
+      <description>numpy np.load() numpy.load(file, mmap_mode=None, allow_pickle=True, fix_imports=True, encoding=’ASCII’) np.save() numpy.save(file, arr, allow_pickle=True, fix_imports=True)。 pandas 读取excel import pandas as pd&#xD;data = pd.read_excel(&amp;#39;path&amp;#39;, sheetname = &amp;#39;sheet1&amp;#39;, header = 0, names = [&amp;#39;第一列&amp;#39;,&amp;#39;第二列&amp;#39;,&amp;#39;第三列&amp;#39;]) path：要读取的文件绝对路径 sheetname：指定读取excel中哪一个工作表，默认sheetname = 0，即默认读取excel中的第一个工作表 若sheetname = ‘sheet1’，即读取excel中的sheet1工作表； 若sheetname = ‘汇总’,即读取excel中命名为“汇总”的工作表； header：用作列名的行号，默认为header = 0 若header = None，则表明数据中没有列名行； 若header = 0，则表明第一行为列名； names：列名命名或重命名&#xA;读取csv import pandas as pd&#xD;data = pd.read_csv(&amp;#39;path&amp;#39;,sep = &amp;#39;,&amp;#39;, header = 0, names = [&amp;#39;第一列&amp;#39;,&amp;#39;第二列&amp;#39;,&amp;#39;第三列&amp;#39;], encoding = &amp;#39;utf-8&amp;#39;) path：要读取的文件绝对路径 sep：指定列与列间的分隔符，默认sep = ‘,’ 若sep = ‘\t’，即列与列间用制表符\t分隔； 若sep = ‘,’，即列与列间用逗号,分隔； header：用作列名的行号，默认为0 若header = None，则表明数据中没有列名行； 若header = 0，则表明第一行为列名； names：列名命名或重命名 encoding：指定用于unicode文本编码格式 若encoding = ‘utf-8’，则表明用UTF-8编码的文本； 若encoding = ‘gbk’，则表明用gbk编码的文本；</description>
+    </item>
+    <item>
+      <title>Print Friendly PDF（web页面保存为PDF工具）</title>
+      <link>https://baidu.com/post/print-friendly-pdfweb%E9%A1%B5%E9%9D%A2%E4%BF%9D%E5%AD%98%E4%B8%BApdf%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/print-friendly-pdfweb%E9%A1%B5%E9%9D%A2%E4%BF%9D%E5%AD%98%E4%B8%BApdf%E5%B7%A5%E5%85%B7/</guid>
+      <description>Print Friendly &amp;amp; PDF官网&#xA;在该工具中粘贴网址，即可将web页面转化为PDF，可删除不需要的内容，更改字体大小 图的大小等&#xA;点击PDF后会生成的PDF下载链接，经过测试使用Motrix下载器下载PDF速度最快&#xA;Motrix下载器官网</description>
+    </item>
+    <item>
+      <title>编译执行和解释执行的优缺点</title>
+      <link>https://baidu.com/post/%E7%BC%96%E8%AF%91%E6%89%A7%E8%A1%8C%E5%92%8C%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E7%BC%96%E8%AF%91%E6%89%A7%E8%A1%8C%E5%92%8C%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/</guid>
+      <description>针对优缺点，可以从以下几个方面分析。&#xA;​ 从启动效率来看，解释执行不需要进行编译操作，而编译执行，要经过编译过程。解释执行启动速度更快。&#xA;​ 从运行效率来看，因为编译执行只需要编译一次，以后再运行就无需编译，而解释执行每次都要经过解释过程，所以编译执行效率更高。&#xA;​ 从内存使用方面来看，编译执行需要生成编译后的机器码文件，而解释执行时逐句解释执行，所以解释执行对内存占用更少。&#xA;​ 从跨平台的角度来看，因为解释执行每次可以根据不同的平台进行解释，例如js在linux和windows都可以运行，而C语言在windows下编译后的文件，只能在windows下才行执行。&#xA;​ 对于大型项目来说，比较注重运行效率，核心代码一般都是采用编译执行的语言。而对于一些简单的操作，可以考虑使用解释执行的语言。</description>
+    </item>
+    <item>
+      <title>Git  pull和clone 的区别</title>
+      <link>https://baidu.com/post/git-pull%E5%92%8Cclone-%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 19 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/git-pull%E5%92%8Cclone-%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>实例&#xA;git pull 有权限的仓库指的是我自己的，或者团队中我可以使用的仓库。&#xA;要使用git pull首先你要确定已经连接远程仓库&#xA;git clone 没权限的仓库指的是别人的仓库。别人不给权限，你当然不能随意修改人家的代码了。&#xA;git clone适用于本地没有代码，你要下载。你连不连接远程仓库。有无仓库权限皆可。</description>
+    </item>
+    <item>
+      <title>Git 分支和tag</title>
+      <link>https://baidu.com/post/git-%E5%88%86%E6%94%AF%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Wed, 19 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/git-%E5%88%86%E6%94%AF%E7%9B%B8%E5%85%B3/</guid>
+      <description>实例&#xA;查看本地分支 $ git brach 查看远程分支 $ git branch -r 查看所有分支 git branch -a 创建本地新分支 git branch [branch name] 切换到新分支 在新的分支下即可操作改分支的内容 保持与远程仓库同步：git pull【git pull是在提交到远程仓库之前，先更新到最新版本代码，防止和别人代码产生冲突。】 git checkout [branch name] 推送不同分支到远程 git push origin [branch name]&#xD;git push origin main 删除本地分支 git branch -d [branch name] 删除远程分支 git push origin –delete :[branch name] 推送本地新分支到远程仓库**(前提是与远程仓库连接并同步) git push origin [branch name]:[branch name] 【与远程仓库连接：git remote add origin 仓库地址（ssh）】&#xA;【与远程仓库同步：git pull】&#xA;tag是代码版本控制的标签 tag 对应某次 commit 查看commit的hash $ git log --oneline&#xD;$ git tag -l &amp;#34;v1&amp;#34; // 加上参数 -l 可以使用通配符来过滤 tag 打 tag 不需要在 HEAD 之上，也可以在某次历史提交上打（通过 git log 获取之前的提交记录commit-id） $ git tag -a v3.</description>
+    </item>
+    <item>
+      <title>Git 删除远程仓库文件或文件夹</title>
+      <link>https://baidu.com/post/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Wed, 19 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>前提是本地仓库与远程仓库建立连接的基础上&#xA;git remote add origin 仓库地址 先将远程代码pull到本地，保持本地仓库跟远端仓库同步。 git pull 远程分支 master 上有文件夹 networks，现在不需要了，想删除。 git rm -rf networks/&#xD;git commit -m &amp;#34;networks is no longer needed&amp;#34; 远程分支 master 上有文件夹 networks，现在不需要了，但本地分支想保留。 git rm -rf --cached networks/&#xD;git commit -m &amp;#34;networks is no longer needed&amp;#34; 将修改提交到本地仓库 git commit -m &amp;#39;修改信息&amp;#39; push到远程仓库 git push </description>
+    </item>
+    <item>
+      <title>scrapy_中间件</title>
+      <link>https://baidu.com/post/scrapy_%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/scrapy_%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <description>实例&#xA;Downloader Middleware 处理request Downloader Middleware的功能十分强大，修改User-Agent、处理重定向、设置代理、失败重试、设置Cookies等功能都需要借助它来实现。下面我们来了解一下Downloader Middleware的详细用法。&#xA;处理response&#xA;每个Downloader Middleware都定义了一个或多个方法的类，核心的方法有如下三个。&#xD;process_request(request, spider)。&#xD;process_response(request, response, spider)。&#xD;process_exception(request, exception, spider) Spider Middleware 处理item&#xA;每个Spider Middleware都定义了以下一个或多个方法的类，核心方法有如下4个。&#xD;process_spider_input(response, spider)。&#xD;process_spider_output(response, result, spider)。&#xD;process_spider_exception(response, exception, spider)。&#xD;process_start_requests(start_requests, spider)。 只需要实现其中一个方法就可以定义一个 Spider Middleware。下面我们来看看这4个方法的详细用法。&#xA;1. process_spider_input(response, spider) 当Response被Spider Middleware处理时，process_spider_input()方法被调用。&#xA;process_spider_input()方法的参数有如下两个。&#xA;response，是Response对象，即被处理的Response。 spider，是Spider对象，即该Response对应的Spider。 process_spider_input()应该返回None或者抛出一个异常。&#xA;如果它返回None，Scrapy将会继续处理该Response，调用所有其他的Spider Middleware，直到Spider处理该Response。 如果它抛出一个异常，Scrapy将不会调用任何其他Spider Middleware的process_spider_input()方法，而调用Request的errback()方法。errback的输出将会被重新输入到中间件中，使用process_spider_output()方法来处理，当其抛出异常时则调用process_spider_exception()来处理。 2. process_spider_output(response, result, spider) 当Spider处理Response返回结果时，process_spider_output()方法被调用。&#xA;process_spider_output()方法的参数有如下三个。&#xA;response，是Response对象，即生成该输出的Response。 result，包含Request或Item对象的可迭代对象，即Spider返回的结果。 spider，是Spider对象，即其结果对应的Spider。 process_spider_output()必须返回包含Request或Item对象的可迭代对象。&#xA;3. process_spider_exception(response, exception, spider) 当Spider或Spider Middleware的process_spider_input()方法抛出异常时，process_spider_exception()方法被调用。&#xA;process_spider_exception()方法的参数有如下三个。&#xA;response，是Response对象，即异常被抛出时被处理的Response。 exception，是Exception对象，即被抛出的异常。 spider，是Spider对象，即抛出该异常的Spider。 process_spider_exception()必须要么返回None，要么返回一个包含Response或Item对象的可迭代对象。</description>
+    </item>
+    <item>
+      <title>JavaScript框架vue</title>
+      <link>https://baidu.com/post/javascript%E6%A1%86%E6%9E%B6vue/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/javascript%E6%A1%86%E6%9E%B6vue/</guid>
+      <description>JavaScript框架vue el ：命中标签 可在命中标签下任意使用，使用id选择器，一般挂载在div标签，其他标签有渲染效果 el:&amp;#39;.app&amp;#39; 命中class选择器&#xD;el:&amp;#39;#app&amp;#39; 命中id选择器 data:定义数据 字符串 对象：通过点来获取 列表 数组 v-text指令: 普通文本 &amp;lt;!DOCTYPE html&amp;gt;&#xD;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&#xD;&amp;lt;head&amp;gt;&#xD;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&#xD;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;IE=edge&amp;#34;&amp;gt;&#xD;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;&#xD;&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;&#xD;&amp;lt;/head&amp;gt;&#xD;&amp;lt;body&amp;gt;&#xD;&amp;lt;div class=&amp;#39;ap&amp;#39; id=&amp;#34;app&amp;#34;&amp;gt;&#xD;{{masasge}}&#xD;&amp;lt;h2 v-text=&amp;#34;masasge&amp;#34;&amp;gt;&amp;lt;/h2&amp;gt;&#xD;&amp;lt;/div&amp;gt;&#xD;&amp;lt;!-- 导入vue --&amp;gt;&#xD;&amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;&#xD;&amp;lt;script&amp;gt;&#xD;var app =new Vue({&#xD;el:&amp;#39;.ap&amp;#39;,&#xD;data:{&#xD;masasge:&amp;#39;hello&amp;#39;,&#xD;}&#xD;})&#xD;&amp;lt;/script&amp;gt;&#xD;&amp;lt;/body&amp;gt;&#xD;&amp;lt;/html&amp;gt; v-html指令： 可以解析普通文本和html语法结构 &amp;lt;!DOCTYPE html&amp;gt;&#xD;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&#xD;&amp;lt;head&amp;gt;&#xD;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&#xD;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;IE=edge&amp;#34;&amp;gt;&#xD;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.</description>
+    </item>
+    <item>
+      <title>Git-note</title>
+      <link>https://baidu.com/post/git-note/</link>
+      <pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/git-note/</guid>
+      <description>git版本管理 目的： 协同多人开发 更新代码版本，同时不删除之前的版本 国内镜像：http://npm.taobao.org/mirrors/git-for-windows/ 操作界面 GUI：图形化界面&#xA;BUSH：linux操作&#xA;CMD：win操作&#xA;常用linux命令 1）、cd : 改变目录。&#xA;2）、cd . . 回退到上一个目录，直接cd进入默认目录&#xA;3）、pwd : 显示当前所在的目录路径。&#xA;4）、ls(ll): 都是列出当前目录中的所有文件，只不过ll(两个ll)列出的内容更为详细。&#xA;5）、touch : 新建一个文件 如 touch index.js 就会在当前目录下新建一个index.js文件。&#xA;6）、rm: 删除一个文件, rm index.js 就会把index.js文件删除。&#xA;7）、mkdir: 新建一个目录,就是新建一个文件夹。&#xA;8）、rm -r : 删除一个文件夹, rm -r src 删除src目录&#xA;9）、mv 移动文件, mv index.html src index.html 是我们要移动的文件, src 是目标文件夹,当然, 这样写,必须保证文件和目标文件夹在同一目录下。&#xA;10）、reset 重新初始化终端/清屏。&#xA;11）、clear 清屏。&#xA;12）、history 查看命令历史。&#xA;13）、help 帮助。&#xA;14）、exit 退出。&#xA;15）、#表示注释&#xA;Git中不同颜色的表示 蓝色的表示目录 白色的表示文件 绿色的表示程序 查看Git的配置 用户自己的配置： git config &amp;ndash;global &amp;ndash;list 系统的配置： git config &amp;ndash;system &amp;ndash;list 配置自己的标识（安装后必须要配置的） 配置自己的名称 git config &amp;ndash;global user.</description>
+    </item>
+    <item>
+      <title>redis--新的数据类型Geospatial</title>
+      <link>https://baidu.com/post/redis--%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bgeospatial/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bgeospatial/</guid>
+      <description>记录经纬度坐标，距离 查询等操作 geoadd key 经度 纬度 城市名称 geoadd china：city 12.3 45.6 shanghai 添加元素 geopos key 城市名称 geopos china:city shanghai 查看上海的经纬度 geodist key member1 member2 km/m geodist chian：city shanghai beijing km 查看上海到北京的直线距离用km表示 georadius key 经度 纬度 半径 km/m georadius china：city 110 20 100 km 查看以经度为110纬度为20的圆心100km为半径的内的元素 </description>
+    </item>
+    <item>
+      <title>redis--新的数据类型HyperLogLog</title>
+      <link>https://baidu.com/post/redis--%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bhyperloglog/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bhyperloglog/</guid>
+      <description>主要用于解决基数问题，可以做到去重 pfadd key value pfadd program “java”&#xA;pfadd program “redis” “C++”&#xA;pfadd program “java”&#xA;向programe中添加元素，但java元素只能存在一次&#xA;pfcount key （key） pfcount programe 查询programe中有几个基本元素 pfmerge pfmerge programe_all programe1 programe2&#xA;将programe1和programe2中的元素合并添加到programe_all中去</description>
+    </item>
+    <item>
+      <title>redis--常用数据类型Hash</title>
+      <link>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bhash/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bhash/</guid>
+      <description>hset key field value hset user:1001 name tom 设置一个key为user:1001，field为name的hash hget key field hget user:1001 name 查看key为user:1001field为name的值 hmset key1 field1 value1 field2 value2 hmset user:1001 id 20220601yy name yy 给key为user:1001设置多个field和value hexists key1 field hexists user:1001 name 查看key为user:1001的hash是否存在名为name的field hkeys key hkeys user:1001 列出该hash集合的所有key hvals key hvals user:1001 列出该hash集合的所有value hincrby key field n（数值） hincrby user:1001 age 1 给field为age的值加1 hsetnx key field value hsetnx user:1001 age 10 将field的值设置为10 ，且当field不存在时再能执行 </description>
+    </item>
+    <item>
+      <title>redis--常用数据类型Zset</title>
+      <link>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bzset/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bzset/</guid>
+      <description>有序集合Zset：主要用于数值的排名 是一个没有重复元素的字符串集合 于set的不同之处时有序集合Zset的每个成员都关联了一个评分（score），这个评分被用来按照从最低分到最高峰的方式排序集合中的成员，集合的成员时唯一的但评分可以是重复的 zadd key score1 value1 score2 value2 zadd top 200 python 300 c++ 400 java 将一个或多个member元素及其score值加入到有序集合 zrange key start stop (withscores) zrange top 0 -1 （withscores） 取出0到-1的value值（和score的值） zscore key value zscore z1 java 获取java的scores值 zrangebyscore key min max （withscores） zrangebyscore top 200 400 取出score为200到400的value值，从小到大依次排序 zrevrangebyscore key max min（withscores） zrangebyscore top 400 200 取出score为400到200的value值，从大到小依次排序 zincrby key n（数值） value zincrby top 50 java 给java的score加50 zrem key value zrem top java</description>
+    </item>
+    <item>
+      <title>redis--key的操作命令</title>
+      <link>https://baidu.com/post/redis--key%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--key%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</guid>
+      <description>keys * 查看当前库所有的key exists k1 判断k1是否存在 type k1 查看k1是什么类型数据 del k1 删除k1 unlink k1 异步删除k1，先给你显示已经删除，后慢慢删除 expire k1 10 为k1设置10秒过期时间 ttl k1 查看还有多少秒过期，-1表示永不过期，-2表示已经过期 select 15 命令切换数据库，0&amp;ndash;15共16个数据库，0号数据库为默认数据库 dbsize 查看当前数据库key的数量 flushdb 清空当前数据库 flushall 通杀所有数据库 </description>
+    </item>
+    <item>
+      <title>redis--常用数据类型List</title>
+      <link>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Blist/</link>
+      <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Blist/</guid>
+      <description>List底层是双向链表，可插入首部或尾部，对两端操作性能高，中间通过索引操作 lpush/rpush key value1 value2 value3 lpush L1 v1 v2 v3 从左/右加入value值v1 v2 v3 从左边放入的，被后放入的挤到右边 从右边放入的，被后放入的挤到左边 lpop/rpop key lpop L1 吐出最左/右边的值，吐出后就不存在了 rpoplpush key1 key2 rpoplpush L1 L2 从l1最右边的值取出，加入到l2最左边 lrange key start stop lrange L1 0 -1 按照索引下标获取元素 lindex key index lindex L1 3 按照索引下标获得元素 llen key llen L1 获得列表长度 linset key before 列表中有的值 value linset L1 before “ 列表中有的值 ” “value_new” lrem key 数量（n） value 从左边删除n个value的值 lset key index（索引） value lset L1 1 abc 为L1更新索引为1的值 BLPOP list1 100 操作会被阻塞，如果指定的列表 key list1 存在数据则会返回第一个元素，否则在等待100秒后会返回 nil 。 </description>
+    </item>
+    <item>
+      <title>redis--常用数据类型Set</title>
+      <link>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bset/</link>
+      <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bset/</guid>
+      <description>Set是String类型的无序集合，底层是value为null的hash表，所以添加 查找 删除的复杂度都是O（1） 一个算法，随着数据的增加，执行时间的长短，如果是O（1），数据增加，查找数据的时间不变 sadd key value1 value2 value3 sadd s1 v1 v2 v3 将一个或多个member元素添加到集合key中 smembers key smembers s1 取出该集合的所有值 ismember key value ismember s1 v1 判断集合s1中是否存在v1 scard key scard s1 返回集合的元素个数 srem key value1 value2 srem s1 v1 v2 删除集合s1中的v1 v2 spop key spop s1 从s1集合中随机吐出一个元素 srandmember key n（数量） srandmember s1 2 从集合s1中随机取出2个元素，不会从集合中删除 smove set1（移动元素的集合） set2（目标集合）value smove s1 s2 v1 将s1集合中的v1移动到s2 sinter key1 key2 sinter s1 s2 返回两个集合的交集元素 sunion key1 key2 sunion s1 s2 返回两个集合的并集 sdiff key1 kdy2 sdiff s1 s2 返回两个集合的差集 </description>
+    </item>
+    <item>
+      <title>redis--常用数据类型String</title>
+      <link>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bstring/</link>
+      <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis--%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bstring/</guid>
+      <description>String 可以存图片，value值最大可存512M set key value set k1 v1 设置k1的value为v1，set可以被新值覆盖set k1 v2 get key get k1 查询k1的value值 setnx key value setnx k2 v2 只有当key不存在时，才能设置，不能被覆盖 append key value append k1 abc 将给定的value值追加到原值的末尾，返回值的长度 strlen key strlen k1 查看k1的长度 incr key incr k1 将k1中的值加1 decr key decr k1 将k1中的值减1 redis是单线程，redis操作时原子性的，每个操作都是一个线程，原子性操作是不会被线程调度机制打断的 redis是单线程加多路I/O复用 incrby key 步长 incrby k1 20 给k1加20 decrby key 步长 decrby k1 20 将k1减20 mset key1 value1 key2 value2 mset k1 v1 k2 v2 同时设置多个key-value mget key1 value1 key2 value2 mget k1 k2 同时获取多个key的值 msetnx key1 value1 key2 value2 msetnx k1 v1 k2 v2 同时设置多个key-value，当且仅当所有key不存在时 getrange key 开始位置 结束位置 getrange name 0 3 可以取到位置0和位置3 setrange key 起始位置 value 从给定的起始位置开始，用value值覆盖原先的值，索引位置从0开始 setrange k1 2 abcd setex key 过期时间 value setex k1 10 v1 设置过期时间 getset key value getset k1 new 给k1设置新值，返回旧值 </description>
+    </item>
+    <item>
+      <title>Mkdown常用语法</title>
+      <link>https://baidu.com/post/mkdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/mkdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</guid>
+      <description>语法 # 一级标题&#xD;## 二级标题&#xD;###### 六级标题 一级标题 二级标题 六级标题 **加粗**，*倾斜*，***粗斜***，==高亮== 加粗，倾斜，粗斜，==高亮==&#xA;~~删除线~~、&amp;lt;u&amp;gt;下划线&amp;lt;/u&amp;gt; 删除线、下划线&#xA;--- 上&amp;lt;sup&amp;gt;标&amp;lt;/sup&amp;gt;、下&amp;lt;sub&amp;gt;标&amp;lt;/sub&amp;gt; 上标、下标&#xA;*粗体*&#xD;\*粗体*&#xD;&amp;lt;www.baidu.com&amp;gt;&#xD;\&amp;lt;www.baidu.com&amp;gt; 粗体 *粗体*&#xA;&amp;lt;www.baidu.com&amp;gt; &amp;lt;www.baidu.com&amp;gt;&#xA;&amp;gt; 引用&#xD;&amp;gt;&#xD;&amp;gt; &amp;gt; 引用的引用 引用&#xA;引用的引用&#xA;[toc] [toc]&#xA;语法：文本[^脚注序号]&#xD;[^脚注序号]: 这是脚注的内容 语法：文本1&#xA;红色的代码为#ff0000&#xD;&amp;lt;font color=#ff0000 size=4 face=&amp;#34;黑体&amp;#34;&amp;gt;红色的代码为#ff0000&amp;lt;/font&amp;gt; 红色的代码为#ff0000&#xA;红色的代码为#ff0000&#xA;&amp;lt;span style=&amp;#34;background: aqua&amp;#34;&amp;gt;文本内容&amp;lt;/span&amp;gt; 文本内容&#xA;[google](http://www.google.com &amp;#34;谷歌&amp;#34;) google&#xA;&amp;lt;img src=&amp;#34;图片地址&amp;#34; width=&amp;#34;700&amp;#34; height=&amp;#34;400&amp;#34; /&amp;gt;&#xD;&amp;lt;img src=&amp;#34;图片地址&amp;#34; style=&amp;#34;zoom:80%&amp;#34; /&amp;gt; &amp;lt;table&amp;gt;&#xD;&amp;lt;tr&amp;gt;&#xD;&amp;lt;td&amp;gt;&amp;lt;center&amp;gt;&amp;lt;img src=&amp;#34;https://img-blog.csdnimg.cn/20200429213846241.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlX25hbg==,size_16,color_FFFFFF,t_70&amp;#34;&amp;gt;&amp;lt;/center&amp;gt;&amp;lt;/td&amp;gt;&#xD;&amp;lt;td&amp;gt;&amp;lt;center&amp;gt;&amp;lt;img src=&amp;#34;https://img-blog.csdnimg.cn/20200429213846241.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlX25hbg==,size_16,color_FFFFFF,t_70&amp;#34;&amp;gt;&amp;lt;/center&amp;gt;&amp;lt;/td&amp;gt;&#xD;&amp;lt;td&amp;gt;&amp;lt;center&amp;gt;&amp;lt;img src=&amp;#34;https://img-blog.csdnimg.cn/20200429213846241.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlX25hbg==,size_16,color_FFFFFF,t_70&amp;#34;&amp;gt;&amp;lt;/center&amp;gt;&amp;lt;/td&amp;gt;&#xD;&amp;lt;/tr&amp;gt;&#xD;&amp;lt;/table&amp;gt; 这是脚注的内容&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
+    </item>
+    <item>
+      <title>Redis课后习题（第一章）</title>
+      <link>https://baidu.com/post/redis%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E7%AC%AC%E4%B8%80%E7%AB%A0/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E7%AC%AC%E4%B8%80%E7%AB%A0/</guid>
+      <description>NoSQL泛指____________数据库。 非关系型&#xA;NoSQL的四大分类是________________、________________、和。 (1) 键值对&#xA;(2) 文档型数据库&#xA;(3) 列存储数据库&#xA;(4) 图形数据库&#xA;数据存储都是基于________________而运行的。 硬件环境&#xA;当单机的储多局限出现后，为了解决数据处理的问题，在两个方向上做了很大的努力：一个是基于服务器本身的_________________；另一个是基于多服务器的________________。 (1) 功能挖掘;纵向扩充&#xA;(2) 横向扩充&#xA;NoSQL与TRDB技术的不同特点：数据存储模式不一样，TRDB为强数据存储模式，NoSQL为_____________TRDB以集中部署一台物理机为最初出发点，NoSQL的核心技术思路是_____________TRDB的事物严格遵循ACID原则，而NoSQL主要遵循_____________ (1) 弱数据存储模式&#xA;(2) 分布式技术;分布式&#xA;(3) BASE原则&#xA;BASE指的是_____________、和 (1) 基本可用&#xA;(2) 软状态&#xA;(3) 最终一致性&#xA;CAP定理要考虑的三个问题是_________________、_________________ (1) 一致性&#xA;(2) 可用性&#xA;(3) 多区容错性&#xA;Redis是一个基于_________________的_________________NoSQL数据库 (1) 内存&#xA;(2) 键值型&#xA;Redis有16个数据库，现在要切换到3号数据库，使用的命令是___________________________（使用小写字母） (1) select 3&#xA;查看当前库中所有的key，使用___________________命令判断k1键是否存储，使用___________________命令删除k1和k2键，使用___________________命令 (1) keys *&#xA;(2) exists k1&#xA;(3) del k1 k2</description>
+    </item>
+    <item>
+      <title>redis课后习题（第二章）</title>
+      <link>https://baidu.com/post/redis%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E7%AC%AC%E4%BA%8C%E7%AB%A0/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E7%AC%AC%E4%BA%8C%E7%AB%A0/</guid>
+      <description>字符串键是Redis最基本的键值对类型，这种类型的健值对会在数据库中把单独的__________和单独的__________关联起来，被关联的键和值可以是普通的__________，也可以是__________,__________,__________压缩文件等二进制数据。 正确答案：&#xA;(1) 一个键&#xA;(2) 一个值&#xA;(3) 文字数据&#xA;(4) 图片&#xA;(5) 视频&#xA;(6) 音频&#xA;执行下列命令后，键 password的值是_______________ 127.0.0.1:6379&amp;gt;SET password &amp;ldquo;123456&amp;rdquo; NXOK127.0.0.1:6379&amp;gt;SET password &amp;ldquo;666666&amp;rdquo; NX 正确答案：&#xA;(1) 123456;&amp;ldquo;123456&amp;rdquo;&#xA;对一个有值的键password执行下列命令后，GET命令的返回结果是_______________ 127.0.0.1:6379&amp;gt;SET password &amp;ldquo;123456&amp;rdquo; XX 127.0.0.1:6379&amp;gt;SET password &amp;ldquo;666666&amp;rdquo; XX 127.0.0.1:6379&amp;gt;GET password 正确答案：&#xA;(1) 123456;&amp;ldquo;123456&amp;rdquo;&#xA;MSET命令可以代替多条SET命令只需要_______________，从而有效地减少程序执行多个设置操作时的的时间。以博客为例，当用户想要注册博客时，需要把用户的名字、账号、密码等多项信息存储起来，并在用户登录的时候取出这些信息。仿真以上实验。 127.0.0.1:6379&amp;gt;_____________________author &amp;ldquo;Jack&amp;rdquo; account &amp;ldquo;10086&amp;rdquo; password &amp;ldquo;123456&amp;rdquo; 127.0.0.1:6379&amp;gt;MGET auth account password 正确答案：&#xA;(1) 一次网络通信&#xA;(2) MSET&#xA;(3) &amp;ldquo;Jack&amp;rdquo; ;Jack&#xA;(4) &amp;ldquo;10086&amp;rdquo;;10086&#xA;(5) &amp;ldquo;123456&amp;rdquo;;123456&#xA;以下代码的执行结果是_______________、_______________ 127.0.0.1:6379&amp;gt;MGET k1 k2 (nil) (nil) 127.0.0.1:6379&amp;gt;MSETNX k1 &amp;ldquo;one&amp;rdquo; k2 &amp;ldquo;two&amp;rdquo; k3 &amp;ldquo;three&amp;rdquo; 127.</description>
+    </item>
+    <item>
+      <title>python常用库的官网</title>
+      <link>https://baidu.com/post/python/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/python/</guid>
+      <description>keras numpy tensorflow scikit-learn pandas matplotlib pytarch xlwings pyecharts scipy redis 第三方库搜索：PyPI </description>
+    </item>
+    <item>
+      <title>python框架官网</title>
+      <link>https://baidu.com/post/python%E6%A1%86%E6%9E%B6%E5%AE%98%E7%BD%91/</link>
+      <pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/python%E6%A1%86%E6%9E%B6%E5%AE%98%E7%BD%91/</guid>
+      <description>框架官网 Django Django是一款用Python语言写的免费开源的 Python Web应用开发框架，它遵循模型 -视图-控制器(MVC)的架构模式。&#xA;Tornado 源意为龙卷风，这里是一款可扩展的，非阻塞的Web服务器，应用开发框架，以及异步联网库&#xA;Twisted Twisted是一款事件驱动的网络编程框架，支持许多常见的传输及应用层协议，如TCP、UDP、SSL/TLS、HTTP、IMAP、SSH、IRC以及FTP。还支持Unix domain sockets，在MIT许可下应用。&#xA;Pulsar Pulsar是一个来自eBay的高扩展性、高可用性、基于事件驱动的开源实时分析平台和流处理框架,它能够实时收集和处理用户行为和业务事件。有了pulsar，你可以写出在不同进程或线程中运行一个或多个活动的异步服务器。&#xA;Bottle Bottle是一个简单高效的遵循WSGI的微型python Web框架。说微型，是因为它只有一个文件，除Python标准库外，它不依赖于任何第三方模块。&#xA;Diesel Diesel是基于Greenlet的事件I/O框架，它提供一个整洁的API来编写网络客户端和服务器。支持TCP和UDP。非阻塞I/O使得diesel非常快速并且容易扩展。&#xA;Scrapy Scrapy是Python开发的一个快速、高层次的屏幕抓取和web抓取框架，用于抓取web站点并从页面中提取结构化的数据。Scrapy用途广泛，可以用于数据挖掘、监测和自动化测试。是一个使用Python编写的，轻量级的，简单轻巧，并且使用起来非常的方便。&#xA;Cubes Cubes是一个轻量级Python框架，包含OLAP、多维数据分析和浏览聚合数据（aggregated data）等工具。</description>
+    </item>
+    <item>
+      <title>操作系统第三章---处理机调度与死锁</title>
+      <link>https://baidu.com/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description>调度的实质是资源的分配 处理机包括中央处理器（CPU） 主存储器（内存） 输入&amp;mdash;输出接口 和外围设备&#xA;处理机是处理存储程序和数据，并按照程序规定的步骤执行指令的部件&#xA;程序是描述处理机完成某项任务的指令序列&#xA;指令是处理机能直接解释和执行的信息单位&#xA;高级调度和低级调度的主要任务是什么 高级调度的主要任务是：依据某种算法将存在处于后备队列中的哪几个作业调入内存并为它们创建进程，分配必要的资源并将它们放入就绪队列 低级调度的主要任务是：根据某种算法，决定就绪队列中的哪个进程应获得处理机 引入中级调度是为了吧那些暂时不能运行的进程调至外存等待，此时进程的状态称为就绪驻外存 何谓作业和JCB 作业：它包含了通常的程序和数据，而且配有一份作业说明书，系统根据该说明书对进程的运行进行控制&#xA;JCB：作业控制块，它是作业在系统中 存在的标志，目的是为了管理和调度作业&#xA;什么情况下需要使用JCB？其中包含了哪些内容？ 在作业运行期间，系统会按照JCB中的信息和作业说明书对作业进行控制 JCB包含的内容有： 作业标志 用户名称 用户账号 作业类型（CPU繁忙型 I/O繁忙型 批量型 终端型） 作业状态 调度信息（优先级 运行时间） 资源需求情况（预计运行时间 需要内存大小 ） 在作业调度中应如何确定接纳多个作业和接纳哪些作业 能接纳多少个作业取决于多道程序度，其表示允许多少个作业可以同时在内存中运行 接纳哪些作业取决于调度算法 最简单的调度算法是先来先服务算法：它会将最早进入外存的作业优先调入内存 另外一种常用的算法是短作业优先算法：它会将外存上（执行时间）最短的作业优先调入内存 作业优先级调度算法：它会将外存上作业优先级最高的作业优先调入内存 简述引起进程调度的主要原因 在 非抢占式调度方式中，引起进程调度的主要原因有： 正在执行的进程执行完毕或因某事件而使其无法继续运行 正在执行的进程提出I/O请求而暂停执行 在进程通信或同步过程中执行了某种原语操作 在抢占是调度方式中主要依据一定的原则进行调度，主要原则有： 优先级原则 短进程优先原则 时间片原则 何谓静态优先级和动态优先级 静态优先级：是在创建进程时确定的，其在进程的整个运行期间保持不变 动态优先级：是指创建进程之初先赋予进程一个优先级，然后优先级会随进程的推进或等待时间的增加而改变 在基于时间片的RR调度算法中，应如何确定时间片的大小 一个较为可取的时间片大小是略大于一次典型的交互所需要的时间，使大多数交互式进程能在一个时间片内完成 为什么说多级反馈队列调度算法能较好的满足各方面用户的需求 对于终端用户：由于终端型用户提交的作业多属于交互型作业，通常较小，系统只要能使这些作业在第一队列规定的时间片内完成，便可使终端型 短批处理作业用户：对于这类作业，如果可以在第一队列中执行完成，则能获得于终端型作业一样的响应时间，对于稍长的短作业，也可以在第二和第三队列各执行一个时间片即可完成，其周转时间仍然较短 长批处理作业中：将其依次在1，2，3. &amp;hellip;n个队列中运行，然后再按RR方式运行用户不必担心其作业长期得不到处理 为什么实时系统中要求系统（尤其是CPU）具有较强的处理能力 若处理机的处理能力不够强，则有可能因处理机忙不过来而导致某些实时任务不能得到及时的处理 按照调度方式可将实时调度算法分为哪几种？ 可分为抢占式调度算法和非抢占式调度算法 实时系统常用的调度算法有哪些，请分别介绍他们 最早截止时间优先算法 根据任务截止时间确定优先级，任务截止时间越早优先级越高，具有最早截止时间的任务排在队列的最前面 最低松弛度优先算法 在确定任务优先级时，根据的时任务的积极程度（或松弛度），任务紧急程度越高，优先级也就越高 优先级倒置算法 在批处理系统和实时系统 分时系统中各采用哪几种进程（作业）调度算法 未知 什么是死锁？产生死锁的原因和必要条件是什么？如何预防死锁？ 死锁就是进程因不能获得自己所需的资源去继续运行而又无法释放自己当下占有资源，且一直处于这样的僵持状态</description>
+    </item>
+    <item>
+      <title>操作系统第二章---进程的描述与控制</title>
+      <link>https://baidu.com/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description>[toc]&#xA;什么是前趋图？ 用来描述程序执行先后顺序的 是一个无环图，每个节点表示一个进程或一段程序 每个节点的权重用来表示该节点所含有的程序量或程序执行时间 什么是进程？ 是程序执行过程和系统进行资源分配和调度的一个独立单位 进程实体简称进程，进程实体由程序段 相关数据段和进程控制块（PCB）组成 OS中为什么要引入进程？并会产生什么影响？ 为了使程序可以并发执行 并且可以对并发执行的程序加以描述和控制 进程的3种基本状态： 就绪态：是指进程已经处于准备好执行的状态，即进程分配到除CPU以外的执行状态，只要获得CPU便可立即执行 执行态：即进获得CPU后其程序正在执行的状态 阻塞态：正在执行的进程由于某些事件（如I/O请求，申请缓冲区失败等等） 对于任何时刻而言&#xA;在单处理机系统中，只能有一个进程处于执行状态&#xA;在多处理机系统中，可以有多个进程处于执行状态&#xA;为什么要引入进程的挂起状态 为了满足下列需求：&#xA;终端用户需要：终端用户自己的程序在运行期间发现有可疑问题，希望暂停程序运行，以便用户研究其执行情况或对其进行修改 父进程的需要：有时父进程希望挂起自己的某个子进程 负荷调节的需要：当实时系统的工作负荷较重，可能会影响到对实时任务控制时，系统会把一些不重要的进程挂起，以保证自身的正常运行 OS的需要：OS有时希望挂起某些进程，以便检查在进程运行过程中资源的使用情况或进行记账。所记录的信息包括PCU时间，实际时间，作业或进程数量。 叙述组成进程的基本要素，并说明他们的作用 是调度和分派的基本单位 是拥有资源的基本单位 PCB的主要内容有哪些 进程标识符：进程标识符用来标志一个进程，一个进程通常有两种标识符（内部标识符和外部表示符）【内部标识符用于系统内部，外部标识符用于用户】 处理机状态信息：处理机的状态信息也叫上下文 进程调度信息 进程控制信息 发生就绪&amp;mdash;&amp;ndash;运行，运行&amp;mdash;&amp;ndash;阻塞或阻塞&amp;mdash;&amp;ndash;运行状态转换时，OS要使用/修改PCB的进程调度信息的状态位&#xA;试说明引起进程创建的主要事件 用户登录：用户登录成功，则系统会为该用户创建一个进程 作业调度：调度算法调用某个作业时，便会将它装入内存并为它创建进程 提供服务 应用请求 在创建一个新进程时，OS需要完成的主要工作是什么 当出现创建新进程的请求时，OS会调用进程创建原语并按以下步骤创建一个新进程 申请空白的PCB&#xA;为新进程分配所需资源&#xA;初始化PCB&#xA;如果就绪队列能够接纳新进程，则将该进程插入到就绪队列&#xA;试说明引起进程终止的主要事件有哪些 正常结束：任务已经完成，准备退出运行 异常结束：如运行超时 等待超时 算术运算错误 I/O错误 指令错等 外界干预：用户杀死进程 终止一个进程时，OS需要完成的主要工作是什么 首先进程会调用系统终止原语 从PCB中读出该进程的进程状态 若被终止的进程正处于执行状态，则立即终止该进程的执行 若该进程还有子孙进程，则还要终止其所有子孙进程，以防他们成为不可控进程 将被终止的进程所拥有的全部资源归还给其父进程或OS 将被终止的进程的PCB从所在队列（就绪队列 阻塞队列 挂起队列等）中移除 试说明引起进程阻塞或被唤醒的主要事件 向系统请求资源失败&#xA;由于OS无足够的资源分配给该进程，此时进程会因不能继续运行而将自身状态转变为阻塞状态，列如：请求打印机&#xA;等待某种操作的完成&#xA;进程必须在某种操作完成后才能继续执行，在该操作完成之前会被阻塞起来&#xA;新数据尚未到达&#xA;对于相互合作的进程，其中一个进程需要先获得另外一个进程提供的新数据，在未到达之前会被阻塞起来&#xA;等待新任务的到达</description>
+    </item>
+    <item>
+      <title>redis命令手册</title>
+      <link>https://baidu.com/post/redis/</link>
+      <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/redis/</guid>
+      <description>字符串 1.1 set：为字符串设置新值 set key value&#xA;redis&amp;gt;set number &amp;ldquo;10086&amp;rdquo;</description>
+    </item>
+    <item>
+      <title>Flume listens to hive logs</title>
+      <link>https://baidu.com/post/flume-listens-to-hive-logs/</link>
+      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/flume-listens-to-hive-logs/</guid>
+      <description>报错现象&#xA;21 五月 2022 17:08:53,228 INFO [SinkRunner-PollingRunner-DefaultSinkProcessor] (org.apache.flume.sink.hdfs.BucketWriter.open:246) - Creating hdfs://hadoop102:9870/flume/20220521/17/logs-.1653124088090.tmp&#xD;21 五月 2022 17:08:53,249 WARN [hdfs-k2-call-runner-0] (org.apache.hadoop.net.NetUtils.wrapWithMessage:834) - Unable to wrap exception of type class org.apache.hadoop.ipc.RpcException: it has no (String) constructor&#xD;java.lang.NoSuchMethodException: org.apache.hadoop.ipc.RpcException.&amp;lt;init&amp;gt;(java.lang.String)&#xD;at java.lang.Class.getConstructor0(Class.java:3082)&#xD;at java.lang.Class.getConstructor(Class.java:1825)&#xD;at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:830)&#xD;at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:806)&#xD;at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1549)&#xD;at org.apache.hadoop.ipc.Client.call(Client.java:1491)&#xD;at org.apache.hadoop.ipc.Client.call(Client.java:1388)&#xD;at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)&#xD;at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)&#xD;at com.sun.proxy.$Proxy12.create(Unknown Source)&#xD;at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.create(ClientNamenodeProtocolTranslatorPB.java:366)&#xD;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xD;at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#xD;at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#xD;at java.lang.reflect.Method.invoke(Method.java:498)&#xD;at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)&#xD;at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)&#xD;at org.</description>
+    </item>
+    <item>
+      <title>Hadoop  shell script</title>
+      <link>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/post/hadoop%E9%9B%86%E7%BE%A4%E8%84%9A%E6%9C%AC/</guid>
+      <description>1.分发文件脚本！！&#xA;创建一个xsync.sh的文件，将以下shell代码写入文件，并将权限改为可执行文件权限即可。&#xA;#1. 判断参数个数 if [ $# -lt 1 ] then&#xD;echo Not Enough Arguement!&#xD;exit;&#xD;fi&#xD;#2. 遍历集群所有机器&#xD;for host in hadoop102 hadoop103 hadoop104&#xD;do&#xD;echo ==================== $host ====================&#xD;#3. 遍历所有目录，挨个发送&#xD;for file in $@&#xD;do&#xD;#4 判断文件是否存在&#xD;if [ -e $file ]&#xD;then&#xD;#5. 获取父目录&#xD;pdir=$(cd -P $(dirname $file); pwd)&#xD;#6. 获取当前文件的名称&#xD;fname=$(basename $file)&#xD;ssh $host &amp;#34;mkdir -p $pdir&amp;#34;&#xD;rsync -av $pdir/$fname $host:$pdir&#xD;else&#xD;echo $file does not exists!</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://baidu.com/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/archives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://baidu.com/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://baidu.com/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&#xA;Hugo makes use of a variety of open source projects including:&#xA;https://github.com/yuin/goldmark https://github.</description>
+    </item>
+  </channel>
+</rss>

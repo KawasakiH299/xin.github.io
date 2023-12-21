@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>KawasakiH299 Blog</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://baidu.com/favicon.ico">
+    <link rel="canonical" href="https://baidu.com">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://baidu.com">KawasakiH299 Blog</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                        
+                            <li>
+                                <a href="/about/">
+                                    
+                                    <span>About</span>
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/post/">
+                                    
+                                    <span>All posts</span>
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>聚类分析（K-means） - Wed, Jul 5, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <p><strong>聚类分析能干什么？</strong></p>
+<p>​      （1）可以作为其它算法的预处理步骤；</p>
+<p>​       （）聚类分析是获得数据分布情况的有效方法</p>
+<p><strong>聚类分析的目标</strong></p>
+<p><strong>聚类分析的目标就是形成的数据簇，且满足两个条件</strong>：</p>
+<p>​       （1）一个簇内的数据尽量相似（high intra-class similarity）；</p>
+<p>​        （2）不同簇的数据尽量不相似（low inter-class similarity）。</p>
+<p><strong>衡量一个聚类分析算法质量，依靠</strong>：</p>
+<p>​        （1） 相似度测量机制是否合，是否能真的测出哪些数据相似，哪些数据不相似；</p>
+<p>​         （）是否能发现数据背后潜在的、手工难以发现的类知识</p>
+<p><strong>聚类分析****有哪些方法？</strong></p>
+<p>**划分法（<strong><strong>Partitioning Methods</strong></strong>）：**基于一定标准构建数据的划分，k-means、k-modes、k-medoids、PAM、CLARA、CLARANS等。</p>
+<p><strong>层次法</strong>（Hierarchical Methods）：对给定数据对象集合进行层次的分解。</p>
+<p>**密度法（<strong><strong>density-based Methods</strong></strong>）：**基于数据对象的相连密度评价。</p>
+<p><strong>网格法（<strong><strong>Grid-based Methods</strong></strong>）</strong>：将数据空间划分为有限个单元（Cell）的网格结构，基于网格结构进行聚类。</p>
+<p><strong>模型法</strong>（Model-Based Methods）：给每一个簇假定一个模型，然后去寻找能够很好的满足这个模型的数据集。</p>
+<p>常用的相似性测量方法包括：</p>
+<ol>
+<li>欧氏距离（Euclidean Distance）：计算样本间的欧氏距离作为相似性度量。对于多维数据，欧氏距离是最常见的相似性度量方法。</li>
+<li>曼哈顿距离（Manhattan Distance）：也叫城市街区距离，计算样本间的曼哈顿距离作为相似性度量。对于特征间的绝对差异更加敏感。</li>
+<li>余弦相似度（Cosine Similarity）：计算样本间的余弦相似度作为相似性度量。适用于文本和向量空间模型的聚类分析。</li>
+<li>相关系数（Correlation Coefficient）：计算样本间的相关系数作为相似性度量。适用于线性相关关系的聚类分析。</li>
+<li>Jaccard相似系数（Jaccard Similarity Coefficient）：计算样本间的Jaccard相似系数作为相似性度量。适用于集合的聚类分析。</li>
+</ol>
+
+    <h4><a href="https://baidu.com"></a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+
+    <p class="text-center">
+        <a href="https://facebook.com">Facebook</a> 
+        <a href="https://twitter.com">Twitter</a> 
+        <a href="https://linkedin.com">Linkedin</a> 
+        <a href="https://github.com">GitHub</a> 
+        <a href="https://gitlab.com">GitLab</a>
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: false ,
+        onePass: false , 
+        speedFactor: 1 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

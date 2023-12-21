@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>KawasakiH299 Blog</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://baidu.com/favicon.ico">
+    <link rel="canonical" href="https://baidu.com">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://baidu.com">KawasakiH299 Blog</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                        
+                            <li>
+                                <a href="/about/">
+                                    
+                                    <span>About</span>
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/post/">
+                                    
+                                    <span>All posts</span>
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>excalidraw笔记绘板搭建 - Mon, Nov 13, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <p>excalidraw笔记绘板搭建</p>
+<p>1，首先安装docker</p>
+<p>2，安装docker-compose</p>
+<pre tabindex="0"><code>yum -y install epel-release
+yum install -y docker-compose
+yum install python-pip
+wget https://github.com/docker/compose/releases/download/1.14.0-rc2/docker-compose-Linux-x86_64
+mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+docker-compose -version
+</code></pre><p>3，编写docker-compose.yaml文件</p>
+<pre tabindex="0"><code>version: &#34;3&#34;
+services:
+  excalidrwa:
+    image: excalidraw/excalidraw
+    restart: unless-stopped
+    ports:
+      - 3000:80
+</code></pre><p>4,启动excalidraw</p>
+<pre tabindex="0"><code>docker-compose up -d
+docker-compose ps    #查看端口
+</code></pre>
+    <h4><a href="https://baidu.com"></a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+
+    <p class="text-center">
+        <a href="https://facebook.com">Facebook</a> 
+        <a href="https://twitter.com">Twitter</a> 
+        <a href="https://linkedin.com">Linkedin</a> 
+        <a href="https://github.com">GitHub</a> 
+        <a href="https://gitlab.com">GitLab</a>
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: false ,
+        onePass: false , 
+        speedFactor: 1 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

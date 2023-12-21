@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>KawasakiH299 Blog</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://baidu.com/favicon.ico">
+    <link rel="canonical" href="https://baidu.com">
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://baidu.com">KawasakiH299 Blog</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                        
+                            <li>
+                                <a href="/about/">
+                                    
+                                    <span>About</span>
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/post/">
+                                    
+                                    <span>All posts</span>
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>numpy  pandas读取文件 - Wed, Apr 26, 2023</h1>
+    </div>
+    <p class="lead"></p>
+    <h3 id="numpy">numpy</h3>
+<h4 id="npload"><strong>np.load()</strong></h4>
+<pre tabindex="0"><code>numpy.load(file, mmap_mode=None, allow_pickle=True, fix_imports=True, encoding=’ASCII’)
+</code></pre><h4 id="npsave">np.save()</h4>
+<pre tabindex="0"><code>numpy.save(file, arr, allow_pickle=True, fix_imports=True)。
+</code></pre><hr>
+<h3 id="pandas">pandas</h3>
+<h4 id="读取excel">读取excel</h4>
+<pre tabindex="0"><code>import pandas as pd
+data = pd.read_excel(&#39;path&#39;, sheetname = &#39;sheet1&#39;, header = 0, names = [&#39;第一列&#39;,&#39;第二列&#39;,&#39;第三列&#39;])
+</code></pre><p>path：要读取的文件绝对路径
+sheetname：指定读取excel中哪一个工作表，默认sheetname = 0，即默认读取excel中的第一个工作表
+若sheetname = ‘sheet1’，即读取excel中的sheet1工作表；
+若sheetname = ‘汇总’,即读取excel中命名为“汇总”的工作表；
+header：用作列名的行号，默认为header = 0
+若header = None，则表明数据中没有列名行；
+若header = 0，则表明第一行为列名；
+names：列名命名或重命名</p>
+<hr>
+<h4 id="读取csv">读取csv</h4>
+<pre tabindex="0"><code>import pandas as pd
+data = pd.read_csv(&#39;path&#39;,sep = &#39;,&#39;, header = 0, names = [&#39;第一列&#39;,&#39;第二列&#39;,&#39;第三列&#39;], encoding = &#39;utf-8&#39;)
+</code></pre><p>path：要读取的文件绝对路径
+sep：指定列与列间的分隔符，默认sep = ‘,’
+若sep = ‘\t’，即列与列间用制表符\t分隔；
+若sep = ‘,’，即列与列间用逗号,分隔；
+header：用作列名的行号，默认为0
+若header = None，则表明数据中没有列名行；
+若header = 0，则表明第一行为列名；
+names：列名命名或重命名
+encoding：指定用于unicode文本编码格式
+若encoding = ‘utf-8’，则表明用UTF-8编码的文本；
+若encoding = ‘gbk’，则表明用gbk编码的文本；</p>
+<hr>
+<h4 id="读取txt">读取txt</h4>
+<p>pandas中的pd.read_csv即可以读取csv文件，也可以读取txt文件方法同上，也可以用pd.read_table读取txt文件，区别在于sep的默认参数不同。</p>
+<pre tabindex="0"><code>import pandas as pd
+data = pd.read_table(&#39;path&#39;, sep = &#39;\t&#39;, header = None, names = [&#39;第一列&#39;,&#39;第二列&#39;,&#39;第三列&#39;])
+</code></pre><p>path：要读取的文件绝对路径
+sep：指定列与列间的分隔符，默认sep = ‘\t’
+若sep = ‘\t’，即列与列间用制表符\t分隔；
+若sep = ‘,’，即列与列间用逗号,分隔；
+header：用作列名的行号，默认为header = 0
+若header = None，则表明数据中没有列名行；
+若header = 0，则表明第一行为列名；
+names：列名命名或重命名</p>
+
+    <h4><a href="https://baidu.com"></a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+
+    <p class="text-center">
+        <a href="https://facebook.com">Facebook</a> 
+        <a href="https://twitter.com">Twitter</a> 
+        <a href="https://linkedin.com">Linkedin</a> 
+        <a href="https://github.com">GitHub</a> 
+        <a href="https://gitlab.com">GitLab</a>
+    </p>
+</footer>
+
+</body><link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: false ,
+        onePass: false , 
+        speedFactor: 1 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</html>

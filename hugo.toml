@@ -3,6 +3,10 @@ baseURL = 'https://baidu.com'
 title = 'KawasakiH299 Blog'
 languageCode = "en"
 DefaultContentLanguage = "en"
+[submodule "themes/hugo.386"]
+    path = themes/hugo.386
+    url = https://gitlab.com/jmfergeau/hugo.386
+
 [Params]
     # The name to display as main title in the home page
     mainpagetitle = "KawasakiH299 FOR YOU"
